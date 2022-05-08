@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* --------------------------------------NAVIGATION BAR-------------------------------------- */
+
+nav {
+    position: sticky;
+    height: max-content;
+    background-color: #FFF8F3;
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+
+#nav-list {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list-item {
+    padding: 10px;
+}
+
+.align-self-end {
+    margin-left: auto;
+}
+
+.nav-list-item a {
+    text-decoration: none;
+    color: black;
+    font-size: larger;
+}
+
+.nav-list-item button {
+    font-size: larger;
+    border-style: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #A3E4DB;
+    margin-right: 2rem;
+}
+
+.nav-list-item button:hover {
+    background-color: #90cfc7;
+}
+
+.nav-list-item .button {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.nav-list-item .button:hover {
+    background-color: #d4cfcb;
+}
+
+#nav-logo {
+    width: 100px;
+}
+
+/* --------------------------------------Login Form-------------------------------------- */
+
+#login{
+    display: none;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+#login-popup {
+    width: 25%;
+    border: 2px solid black;
+    margin: auto;
+}
+
+.form-item {
+    display: block;
+    margin: auto;
+}
