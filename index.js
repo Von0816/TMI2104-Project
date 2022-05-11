@@ -1,0 +1,1 @@
+document.getElementById("carousel").style.backgroundImage("img/logo.png");
