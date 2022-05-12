@@ -6,7 +6,7 @@
         <script src="car-list.js"></script>
         <script src="main.js"></script>
     </head>
-    <body>
+    <body id="body">
         <nav>
             <ul id="nav-list">
                 <li class="nav-list-item">
@@ -24,9 +24,56 @@
                     <a class="button" href="support.html">Support</a>
                 </li>
                 <li class="nav-list-item align-self-end">
-                    <button id="login-button" onclick="openLogin()">Login</button>
+                    <button id="login-button" onclick="openContainer()">Login</button>
                 </li>
             </ul>
         </nav>
+        <div class="no-scroll-container" id="login-container" >
+            <div class="modal" id="login-modal">
+                <form action="" id="login-form">
+                    <div class="modal-header">
+                        <h1>LogIn</h1>
+                        <button class="close-button" onclick="closeContainer()">&times;</button>
+                    </div>
+                    <div id="email">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" required/>
+                    </div>
+                    <div id="psw">
+                        <label for="psw">Password</label>
+                        <input type="password" name="psw" requried/>
+                    </div>
+                    <button type="submit" id="submit">Login</button>
+                </form>
+            </div>
+        </div>
+        <div class="content">
+            <h1>Cars</h1>
+
+            <div id="filter">
+                <form action="" id="filter-form">
+                   <div class="dropdown">
+                        <button id="brand-button" type="button">Brand</button>
+                        <div class="dropdown-menu" id="brand-dropdown">
+                       <p>test</p> 
+                        </div>
+                    </div>
+                   <div class="dropdown">
+                        <button id="trans-button" type="button">Transmission</button>
+                        <div class="dropdown-menu" id="trans-dropdown">
+
+                        </div>
+                    </div>
+                    <div>
+                        <button type="submit" id="filter-button">Filter</button>
+                    </div>
+                </form>
+            </div>
+            <div id="car-grid">
+                <script>
+                    generate();
+                </script>
+            </div>
+        </div>
     </body>
 </html>
