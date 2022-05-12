@@ -3,8 +3,9 @@
         <title></title>
         <link rel="stylesheet" href="main.css">
         <link rel="stylesheet" href="index.css">
+        <link rel="icon" type="image/x-icon" href="img/logo2.png">
         <script src="main.js"></script>
-        <script src="index.js"></script>
+        
 
     </head>
     <body>
@@ -39,8 +40,144 @@
                 </form>
             </div>
         </div>
-        <div id="carousel">
-            <img src="#" alt="#">
-        </div>
+        <section class="carousel">
+            <div class="mySlides fade">     
+              <img src="img/1.png" style="width:100%"> 
+            </div>
+            <div class="mySlides fade">
+              <img src="img/2.png" style="width:100%">      
+            </div>
+            <div class="mySlides fade">        
+              <img src="img/3.png" style="width:100%">       
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          </div>
+          <br>
+          <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+          </section>
+          <script src="index.js"></script>
+          <section class="feaCar">
+                <div class="header">
+                <h1>FEATURED CARS</h1>
+                <h3>Our best selling car leasing deals!</h3>
+                </div>
+            <div class="cars">
+                <div class="carDetails">      
+                    <div class="car">
+                        <a target="_blank" href="#">
+                            <img src="img/audi_1.jpg" alt="audi">
+                            <div class="details">
+                                <h3>Audi A3 Sportback</h3>
+                                <p>30 TFSI S line (110bhp) Hatchback | 5dr Petrol Manual | Brand New </p>
+                                <h4>£384/month</h4>
+                                <p>*including VAT</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="carDetails">
+                  <div class="car">
+                      <a target="_blank" href="#">
+                          <img src="img/hyundai_1.jpg" alt="hyundai" >
+                          <div class="details">
+                              <h3>Hyundai Tucson</h3>
+                              <p>1.6 TGDi 2WD SE Connect (150bhp) Estate | 5dr Petrol Manual | Brand New </p>
+                              <h4>£323/month</h4>
+                              <p>*including VAT</p>
+                          </div>
+                      </a>
+                  </div>
+              </div>
+                <div class="carDetails">
+                  <div class="car">
+                      <a target="_blank" href="#">
+                          <img src="img/nissan_1.jpg" alt="nissan">
+                          <div class="details">
+                              <h3>Nissan Micra</h3>
+                              <p>1.0 IG-T N-Sport (92bhp) Hatchback | 5dr Petrol Manual | Brand New </p>
+                              <h4>£243/month</h4>
+                              <p>*including VAT</p>
+                          </div>
+                      </a>
+                  </div>
+              </div>
+              <div class="carDetails">
+                <div class="car">
+                    <a href="#">
+                        <img src="img/volvo.jpg" alt="volvo">
+                        <div class="details">
+                            <h3>Volvo V60 Estate</h3>
+                            <p>2.0 B3P Momentum (163bhp) Estate | Automatic | Brand New <br><br></p>
+                            <h4>£438/month</h4>
+                            <p>*including VAT</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!--Customer Reviews-->
+        <section class="custReview">
+            <div class="header">
+                <h1>CUSTOMER REVIEWS</h1>
+                <h3>You Happy, We Happy</h3>
+                </div>
+            <div class="row">
+                <div class="cust">
+                    <p>"Well done Ling! A very good service supplying new Astra. Please send more gifts! Xxx."</p>
+                    <h3>-Patrick-</h3>
+                </div>
+                <div class="cust">
+                    <p>"Great prices, great cars and great service. Good delivery."</p>
+                    <h3>-Peter-</h3>
+                </div>
+                <div class="cust">
+                    <p>"As always absolutely perfect. Cannot be faulted"</p>
+                    <h3>-Marcus-</h3>
+                </div>
+            </div>
+        </section>
+
+        <!--FAQ-->
+        <section class="faq">
+            <div class="header">
+                <h1>FAQ</h1>
+            </div>
+            <div class="faqCont">
+                <div class="Qs">
+                    <b>???</b>
+                </div>
+                <div class="ans">
+                    <p>shhasf</p>
+                </div><hr>
+                <div class="Qs">
+                    <b>???</b>
+                </div>
+                <div class="ans">
+                    <p>shhasf</p>
+                </div><hr>
+                <div class="Qs">
+                    <b>???</b>
+                </div>
+                <div class="ans">
+                    <p>shhasf</p>
+                </div><hr>
+            </div>         
+        </section>
+
+        <!--FOOTER-->
+        <section class="footer">
+            <footer class="f">
+                <a href="index.html"><img src="img/lingscars-logo.png"></a>           
+                <p> Company Reg No: 6178634 || VAT No: 866 0241 30 <br>
+                    © Copyright 2004 - 2022 LINGsCARS.com. All rights reserved.</p>
+            </footer>
+        </section>
     </body>
 </html>
