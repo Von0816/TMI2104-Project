@@ -30,16 +30,21 @@
         <form action="" id="signup-form">
             <div class="input">
                 <label for="name">Full Name</label>
-                <input type="text" name="name" required>
+                <input type="text" name="name" id="name" required>
             </div>
             <div class="input">
                 <label for="email">Email</label>
-                <input type="email" name="email" required>
+                <input type="email" name="email" id="email" required>
             </div>
             <div class="input">
                 <label for="psw">Password</label>
-                <input type="password" name="psw" id="">
+                <input type="password" name="psw" id="psw" required> 
             </div>
+            <div class="input">
+                <label for="cpsw">Confirm Password</label>
+                <input type="password" name="cpsw" id="cpsw" required>
+            </div>
+            <button type="submit">Signup</button>
         </form>
     </body>
 </html>
