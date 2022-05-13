@@ -1,10 +1,10 @@
 <html>
     <head>
-        <title>Car List</title>
-        <link rel="stylesheet" href="car-list.css">
+        <title>Profile</title>
         <link rel="stylesheet" href="main.css">
-        <script src="car-list.js"></script>
+        <link rel="stylesheet" href="profile.css">
         <script src="main.js"></script>
+        <script src="profile.js"></script>
     </head>
     <body id="body">
         <nav>
@@ -24,11 +24,11 @@
                     <a class="button" href="support.html">Support</a>
                 </li>
                 <li class="nav-list-item align-self-end">
-                    <button id="login-button" onclick="openContainer()">Login</button>
+                    <button id="login-button" onclick="document.location = 'profile.html'">My Profile</button>
                 </li>
             </ul>
         </nav>
-        <div class="no-scroll-container" id="login-container" >
+        <!-- <div class="no-scroll-container" id="login-container" >
             <div class="modal" id="login-modal">
                 <form action="profile.html" method="post" id="login-form">
                     <div class="modal-header">
@@ -47,42 +47,28 @@
                     <a href="signup.html" id="signup-link">Create Account</a>
                 </form>
             </div>
-        </div>
-        <div class="content">
-            <h1>Cars</h1>
-
-            <div id="filter">
-                <form action="" id="filter-form">
-                   <div class="dropdown">
-                        <button id="brand-button" type="button">Brand</button>
-                        <div class="dropdown-menu" id="brand-dropdown">
-                        <p>test</p> 
-                        </div>
-                    </div>
-                   <div class="dropdown">
-                        <button id="trans-button" type="button">Transmission</button>
-                        <div class="dropdown-menu" id="trans-dropdown">
-
-                        </div>
-                    </div>
-                    <div>
-                        <button type="submit" id="filter-button">Filter</button>
-                    </div>
-                </form>
+        </div> -->
+        <div id="profile-grid">
+            <div id="profile-nav">
+                <div id="img-container">
+                    <img src="img/placeholder.jpeg" alt="">
+                </div>
+                <div id="profile-nav-button">
+                    <button>Profile</button>
+                    <button>Settings</button>
+                </div>
             </div>
-            <div id="car-grid">
-                <script>
-                    generate();
-                </script>
+            <div id="tab">
+                <div class="detail">
+                    <label for="name">Name</label>
+                    <input type="text" value="Full Name" name="name" disabled>
+                </div>
+                <div class="detail">
+                    <label for="email">Email</label>
+                    <input type="email" value="email@example.com" name="email" disabled>
+                </div>
             </div>
         </div>
-        <!--FOOTER-->
-        <section class="footer">
-            <footer class="f">
-                <a href="index.html"><img src="img/lingscars-logo.png"></a>           
-                <p> Company Reg No: 6178634 || VAT No: 866 0241 30 <br>
-                    © Copyright 2004 - 2022 LINGsCARS.com. All rights reserved.</p>
-            </footer>
-        </section>
+
     </body>
 </html>

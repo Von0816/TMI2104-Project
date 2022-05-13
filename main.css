@@ -135,3 +135,10 @@ nav {
     border: 1px solid black;
     border-radius: 5px;
 }
+
+.modal #signup-link {
+    color: black;
+    text-decoration-line: none;
+    font-size: 12px;
+    margin-top: 10px;
+}
