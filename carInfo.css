@@ -38,7 +38,7 @@
     color: #696767;
     font-weight: 100;
   }
-  button{
+  .col-1 button{
     width: 140px;
     border: 0;
     padding: 12px 10px;
@@ -49,11 +49,11 @@
     transition: width 0.5s;
   }
 
-  button:hover img{
+  .col-1 button:hover img{
     display:block;
   }
 
-  button:hover{
+  .col-1 button:hover{
     width: 160px;
     display: flex;
     align-items: center;
@@ -79,30 +79,6 @@
   }
   
 
-
-/*FOOTER*/
-.f{
-
-  font-size: 10px; 
-  font-weight: bold; 
-  color: #e7e2db;  
-  background-color: #201f1f;     
-  margin-bottom: 0; 
-  width: 100%; 
-  height: auto;
-  padding-top: 30px;
-  margin-top: 10px;
-  text-align: center;
- 
-}
-
-.f img{
-  width: 15%;
-}
-
-.f p{
-  padding-bottom: 10px;
-}
 
   
 
