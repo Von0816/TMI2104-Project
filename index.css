@@ -118,7 +118,7 @@ img {
 
 }
 div.car {
-  order: 1px solid #ccc;
+  border: 1px solid #ccc;
 }
 
 div.car:hover {
