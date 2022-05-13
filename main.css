@@ -57,7 +57,7 @@ nav {
 }
 
 .nav-list-item .button:hover {
-    background-color: #d4cfcb;
+    background: rgba(255, 255, 255, 0.5);
 }
 
 #nav-logo {
