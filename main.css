@@ -136,3 +136,29 @@ nav {
     border-radius: 5px;
 }
 
+
+/*FOOTER*/
+.f{
+	font-size: 10px; 
+	font-weight: bold; 
+	color: #e7e2db;  
+	background-color: #201f1f;     
+	margin-bottom: 0; 
+	width: 100%; 
+	height: 13%;
+	padding-top: 30px;
+	margin-top: 10px;
+	text-align: center;
+ 
+}
+
+.f img{
+	width: 15%;
+}
+
+.f p{
+	font-size: 10px; 
+	font-weight: bold;  
+	text-align: center;
+	padding-bottom: 10px;
+}
