@@ -83,13 +83,37 @@ input[type=text]:focus, select:focus, textarea:focus {
 	padding: 15px;
 	width: 100%;
 	border: none;
-	border-radius: 4px;
+	border-radius: 25px;
 	cursor: pointer;
 	font-size: 18px;
+	transition: all 0.6s;
 }
 
-.submit-btn:hover {
-	background-color: #5AAAE1;
+.submit-btn:hover span{
+	padding-right: 40px;
+}
+
+
+.submit-btn:hover span:after{
+	opacity: 1;
+	right: 0;
+}
+
+
+.submit-btn span{
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.6s;
+}
+
+.submit-btn span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.6s;
 }
 
 
