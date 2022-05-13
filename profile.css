@@ -31,19 +31,55 @@
 }
 
 #tab {
-    
+    display: flex;
+    flex-flow: column;
     padding: 10px;
 }
 
 #tab .detail {
-    display: flex;
-    justify-content: flex-start;
-    width: 50%;
+    display: grid;
+    grid-template-columns: 10% 90%;
+    grid-template-rows: 1.5rem;
     margin-bottom: 5px;
+    justify-items: start;
 }
 
 #tab label{
     padding: 0;
     margin: 0;
     padding-right: 10px;
+}
+
+
+#tab input {
+    width: 50%;
+}
+
+#tab #edit-button {
+    width: fit-content;
+    padding: 10px;
+    background-color: green;
+    border: 1px solid black;
+}
+
+#tab #btn {
+    display: none;
+}
+
+#tab #btn button {
+    margin-right: 5px;
+}
+
+#save-btn {
+    width: fit-content;
+    padding: 10px;
+    background-color: green;
+    border: 1px solid black;
+}
+
+#cancel-btn {
+    width: fit-content;
+    padding: 10px;
+    background-color: red;
+    border: 1px solid black;
 }

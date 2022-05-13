@@ -1,7 +1,14 @@
+body {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+
 #signup-form {
     display: flex;
     flex-flow: column;
-    width: 100%;
+    width: auto;
+    height: auto;
     justify-content: center;
     align-items: center;
     padding: 10px;
@@ -17,4 +24,12 @@
 
 .input input {
     width: 100%;
+}
+
+#submit {
+    width: fit-content;
+    padding: 10px;
+    background-color: greenyellow;
+    border: 1px solid black;
+    border-radius: 5px;
 }

@@ -55,18 +55,24 @@
                 </div>
                 <div id="profile-nav-button">
                     <button>Profile</button>
-                    <button>Settings</button>
                 </div>
             </div>
             <div id="tab">
-                <div class="detail">
-                    <label for="name">Name</label>
-                    <input type="text" value="Full Name" name="name" disabled>
-                </div>
-                <div class="detail">
-                    <label for="email">Email</label>
-                    <input type="email" value="email@example.com" name="email" disabled>
-                </div>
+                <form action="">
+                    <div class="detail">
+                        <label for="name">Name</label>
+                        <input type="text" value="Full Name" name="name" disabled required>
+                    </div>
+                    <div class="detail">
+                        <label for="email">Email</label>
+                        <input type="email" value="email@example.com" name="email" disabled required>
+                    </div>
+                    <button type="button" id="edit-button" onclick="editProfile()">Edit Profile</button>
+                    <div id="btn">
+                        <button id="cancel-btn" type="button" onclick="cancelEdit()">Cancel</button>
+                        <button id="save-btn" type="submit">Save</button>
+                    </div>
+                </form>
             </div>
         </div>
 
