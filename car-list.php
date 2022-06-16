@@ -45,7 +45,7 @@
         <!--FOOTER-->
         <section class="footer">
             <footer class="f">
-                <a href="index.html"><img src="img/lingscars-logo.png"></a>           
+                <a href="index.php"><img src="img/lingscars-logo.png"></a>           
                 <p> Company Reg No: 6178634 || VAT No: 866 0241 30 <br>
                     © Copyright 2004 - 2022 LINGsCARS.com. All rights reserved.</p>
             </footer>
