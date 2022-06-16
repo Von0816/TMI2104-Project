@@ -221,7 +221,7 @@
 
             <br>
 
-            <div class="container">
+            <div class="containerLogin">
                 <label for="username"><b>Username</b></label>
                 <input type="text" class="loginDetail" placeholder="Enter Username" name="username" required>
 
