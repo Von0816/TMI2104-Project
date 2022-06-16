@@ -1,3 +1,5 @@
+<?php include("connection.php"); ?>
+
 <html>
     <head>
         <title>Support</title>
@@ -8,48 +10,10 @@
         <script src="main.js"></script>
     </head>
     <body id="body">
-        <nav>
-            <ul id="nav-list">
-                <li class="nav-list-item">
-                    <a href="index.html">
-                        <img id="nav-logo" src="img/logo.png" alt="logo">
-                    </a>
-                </li>
-                <li class="nav-list-item">
-                    <a class="button" href="car-list.html">Car List</a>
-                </li>
-                <li class="nav-list-item">
-                    <a class="button" href="about-us.html">About Us</a>
-                </li>
-                <li class="nav-list-item">
-                    <a class="button" href="support.html">Support</a>
-                </li>
-                <li class="nav-list-item align-self-end">
-                    <button id="login-button" onclick="openContainer()">Login</button>
-                </li>
-            </ul>
-        </nav>
-        <div class="no-scroll-container" id="login-container" >
-            <div class="modal" id="login-modal">
-                <form action="profile.html" method="post" id="login-form">
-                    <div class="modal-header">
-                        <h1>LogIn</h1>
-                        <button class="close-button" onclick="closeContainer()">&times;</button>
-                    </div>
-                    <div id="email">
-                        <label for="email">Email</label>
-                        <input type="email" name="email" required/>
-                    </div>
-                    <div id="psw">
-                        <label for="psw">Password</label>
-                        <input type="password" name="psw" requried/>
-                    </div>
-                    <button type="submit" id="submit">Login</button>
-                    <a href="signup.html" id="signup-link">Create Account</a>
-                </form>
-            </div>
-        </div>
-		
+		<!--nav bar-->
+		<?php include("navBarIndex.php"); ?>
+       
+		<!--content-->
 		<div class="bg-img">
 			<div class="top-text">
 				<h1 class="text1" >GOT A QUESTION FOR US?</h1>
