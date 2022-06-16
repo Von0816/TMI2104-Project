@@ -69,7 +69,7 @@
         /* --------------------------------------Login Form-------------------------------------- */
 
         /* Full-width input fields */
-        input[type=text], input[type=password]
+        input[type=text].loginDetail, input[type=password].loginDetail
         {
             width: 30%;
             padding: 12px 20px;
@@ -223,11 +223,11 @@
 
             <div class="container">
                 <label for="username"><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="username" required>
+                <input type="text" class="loginDetail" placeholder="Enter Username" name="username" required>
 
                 <br>
                 <label for="password"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" id= "myPassword" name="password" required>
+                <input type="password" class="loginDetail" placeholder="Enter Password" id= "myPassword" name="password" required>
 
                 <br><br><br>
 
