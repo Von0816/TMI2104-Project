@@ -47,7 +47,7 @@
             <div class="cars">
                 <div class="carDetails">      
                     <div class="car">
-                        <a target="_blank" href="audi-a3.html">
+                        <a target="_blank" href="audi-a3.php">
                             <img src="img/audi_1.jpg" alt="audi">
                             <div class="details">
                                 <h3>Audi A3 Sportback</h3>
@@ -59,7 +59,7 @@
                 </div>
                 <div class="carDetails">
                   <div class="car">
-                      <a target="_blank" href="hyundai-tucson.html">
+                      <a target="_blank" href="hyundai-tucson.php">
                           <img src="img/hyundai_1.jpg" alt="hyundai" >
                           <div class="details">
                               <h3>Hyundai Tucson</h3>
@@ -71,7 +71,7 @@
               </div>
                 <div class="carDetails">
                   <div class="car">
-                      <a target="_blank" href="nissan-micra.html">
+                      <a target="_blank" href="nissan-micra.php">
                           <img src="img/nissan_1.jpg" alt="nissan">
                           <div class="details">
                               <h3>Nissan Micra</h3>
@@ -145,14 +145,14 @@
                         the car or vehicle to the dealer for no cost, or can often buy it at an agreed price. Ling owns the UK’s 
                         craziest car leasing company.</p>
                 </div><hr>
-                <a href="support.html" class="button">MORE FAQs</a></button>  
+                <a href="support.php" class="button">MORE FAQs</a></button>  
             </div> 
         </section>
 
         <!--FOOTER-->
         <section class="footer">
             <footer class="f">
-                <a href="index.html"><img src="img/lingscars-logo.png"></a>           
+                <a href="index.php"><img src="img/lingscars-logo.png"></a>           
                 <p> Company Reg No: 6178634 || VAT No: 866 0241 30 <br>
                     © Copyright 2004 - 2022 LINGsCARS.com. All rights reserved.</p>
             </footer>
