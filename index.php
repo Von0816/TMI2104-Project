@@ -1,3 +1,5 @@
+<?php include("connection.php"); ?>
+
 <html>
     <head>
         <title>LINGsCARS</title>
@@ -9,58 +11,9 @@
 
     </head>
     <body id="body">
-        <nav>
-            <ul id="nav-list">
-                <li class="nav-list-item">
-                    <a href="index.html">
-                        <img id="nav-logo" src="img/logo.png" alt="logo">
-                    </a>
-                </li>
-                <li class="nav-list-item">
-                    <a class="button" href="car-list.html">Car List</a>
-                </li>
-                <li class="nav-list-item">
-                    <a class="button" href="about-us.html">About Us</a>
-                </li>
-                <li class="nav-list-item">
-                    <a class="button" href="support.html">Support</a>
-                </li>
-                <li class="nav-list-item align-self-end">
-                    <button id="login-button" onclick="openContainer()">Login</button>
-                </li>
-            </ul>
-        </nav>
-        <div class="no-scroll-container" id="login-container" >
-            <div class="modal" id="login-modal">
-                <form action="profile.html" method="post" id="login-form">
-                    <div class="modal-header">
-                        <h1>LogIn</h1>
-                        <button class="close-button" onclick="closeContainer()">&times;</button>
-                    </div>
-                    <div id="email">
-                        <label for="email">Email</label>
-                        <input type="email" name="email" required/>
-                    </div>
-                    <div id="psw">
-                        <label for="psw">Password</label>
-                        <input type="password" name="psw" requried/>
-                    </div>
-                    <button type="submit" id="submit">Login</button>
-                    <a href="signup.html" id="signup-link">Create Account</a>
-                </form>
-            </div>
-        </div>
-        <!--
-        <div id="login">
-            <div id="login-popup">
-                <form action="#" iod="login-form">
-                    <label class="form-item" for="email">Email</label>
-                    <input class="form-item" type="email" name="email" id="email">
-                    <label class="form-item" for="password">Password</label>
-                    <input class="form-item" type="password" name="password" id="password">
-                </form>
-            </div>
-        </div> -->
+        <!--nav bar-->
+        <?php include("navBarIndex.php"); ?>
+       
 
         <!--Carousel website-->
         <section class="carousel">
@@ -94,7 +47,7 @@
             <div class="cars">
                 <div class="carDetails">      
                     <div class="car">
-                        <a href="audi-a3.html">
+                        <a target="_blank" href="audi-a3.html">
                             <img src="img/audi_1.jpg" alt="audi">
                             <div class="details">
                                 <h3>Audi A3 Sportback</h3>
@@ -106,7 +59,7 @@
                 </div>
                 <div class="carDetails">
                   <div class="car">
-                      <a href="hyundai-tucson.html">
+                      <a target="_blank" href="hyundai-tucson.html">
                           <img src="img/hyundai_1.jpg" alt="hyundai" >
                           <div class="details">
                               <h3>Hyundai Tucson</h3>
@@ -118,7 +71,7 @@
               </div>
                 <div class="carDetails">
                   <div class="car">
-                      <a href="nissan-micra.html">
+                      <a target="_blank" href="nissan-micra.html">
                           <img src="img/nissan_1.jpg" alt="nissan">
                           <div class="details">
                               <h3>Nissan Micra</h3>
