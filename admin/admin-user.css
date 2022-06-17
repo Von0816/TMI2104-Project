@@ -4,3 +4,14 @@
     gap: 1.5rem;
 }
 
+.table-container {
+    width: fit-content;
+}
+
+table {
+    width: fit-content;
+}
+/* .save-btn {
+    background-color: greenyellow;
+    border: none;
+} */
