@@ -32,9 +32,13 @@
                 
         if($num==1){
             $_SESSION['bookingID'] = $row['bookingID'];
+           
+            
         }
-
         $bookCar = $_SESSION['bookingID'];
+        /*if($bookCar){
+
+        }*/
 
         $sql = "INSERT INTO payment(bookingID, paymentDateTime, paymentMethod, billing_fName, billing_lName, billing_email, billing_addr, billing_city, billing_state, nameOnCard, cardNum, cardEXPmonth, cardEXPyear, card_CVV)
         VALUES ('$bookCar','$dateT','$payMethod','$fname', '$lname', '$email', '$address', '$city', '$state', '$cardname', '$cardnumber', '$expmonth', '$expyear', '$cvv')";
