@@ -211,7 +211,7 @@
     <nav>
         <ul id="nav-list">
             <li class="nav-list-item">
-                <a href="index.php">
+                <a href="indexMember.php">
                 <img id="nav-logo" src="img/logo.png" alt="logo">
                 </a>
             </li>
