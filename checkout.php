@@ -1,3 +1,4 @@
+<?php include("connection.php"); ?>
 <?php include("navBarIndex.php"); ?>
 <br>
 <html>
@@ -6,6 +7,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <link rel="stylesheet" href="main.css">
 <link rel="stylesheet" href="checkout.css">
+<script src="index.js"></script>
 </head>
     <body id="body">   
        <div class="row">
@@ -59,7 +61,7 @@
         <label>
           <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
         </label>
-        <input type="submit" value="Continue and Print receipt" class="btn">
+        <input type="submit" value="Continue and Print receipt" class="btn_submit">
       </form>
     </div>
   </div>

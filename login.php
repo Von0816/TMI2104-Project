@@ -8,14 +8,13 @@
                     
             if($num==1){
                 $_SESSION['username'] = $row['adminUsername'];
-                $_SESSION['accountLevel'] = "admin";
+                $_SESSION['userID'] = $row['adminID'];
+                $_SESSION['accLevel'] = "admin";
 
                 if(isset($_SESSION['username'])){
                     //echo "Sucessfully logged in as admin..Welcome". $_SESSION['username'];
                     
                     echo "<script>alert('Sucessfully logged in as admin. Welcome!!'); window.location='indexAdmin.php';</script>";
-                    
-                    
                     
                 }
                 
@@ -30,7 +29,8 @@
                         
                 if($num==1){
                     $_SESSION['username'] = $row['memberUsername'];
-                    $_SESSION['accountLevel'] = "member";
+                    $_SESSION['userID'] = $row['memberID'];
+                    $_SESSION['accLevel'] = "member";
 
                     if(isset($_SESSION['username'])){
                         //echo "Sucessfully logged in as member..Welcome". $_SESSION['username'];

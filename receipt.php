@@ -8,8 +8,18 @@ require "vendor/autoload.php";
 
 $mail = new PHPMailer(true);
 
-//$set = $_SESSION['bookingID']; // TUNGGU ELL
-$set = 1; //TESTING JAK
+
+$sql = "SELECT * FROM booking";
+$query = $link -> query($sql);
+$row = $query -> fetch_assoc();
+$num = $query -> num_rows;	
+        
+if($num==1){
+    $_SESSION['bookingID'] = $row['bookingID'];
+    $set = $_SESSION['bookingID'];
+}
+
+
 if($set){
 
 	$sql = "SELECT car.carName, car.carBody, car.carGearBox, car.carMonthlyRate

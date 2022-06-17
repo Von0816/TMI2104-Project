@@ -5,13 +5,15 @@
         <title>Support</title>
         <link rel="stylesheet" href="support.css">
         <link rel="stylesheet" href="main.css">
-	<link rel="icon" type="image/x-icon" href="img/logo2.png">
+		<link rel="icon" type="image/x-icon" href="img/logo2.png">
         <script src="support.js"></script>
-        <script src="main.js"></script>
+		<script src="index.js"></script>
+      
     </head>
     <body id="body">
 		<!--nav bar-->
 		<?php include("navBarIndex.php"); ?>
+		
        
 		<!--content-->
 		<div class="bg-img">

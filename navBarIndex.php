@@ -43,8 +43,8 @@
             font-size: larger;
             position:relative; 
             top:0px; 
-            left:22%; 
-            margin-left:500px; 
+            left:490px; 
+            margin-left:180px; 
             margin-right:0px;
         }
 
@@ -54,17 +54,17 @@
             border-radius: 30px;
             cursor: pointer;
             background-color: #A3E4DB;
-            padding: 10px 20px;
+            padding: 10px 26px;
             color: white;
             margin: 8px 0;
             width: 100%;
         }
 
         .loginButton{
-            position:fixed; 
+            position:relative; 
             top:0px; 
             left:0px; 
-            margin-left:85%; 
+            margin-left:33%; 
             margin-right:0px;
         }
 
@@ -211,7 +211,7 @@
     <nav>
         <ul id="nav-list">
             <li class="nav-list-item">
-                <a href="index.php">
+                <a href="indexMember.php">
                 <img id="nav-logo" src="img/logo.png" alt="logo">
                 </a>
             </li>
@@ -229,10 +229,10 @@
                 <a id="welcomeText" >
                     <?php 
                     if (isset($_SESSION['username'])){
-                        echo "Welcome,", $_SESSION['username']; 
+                        echo "Welcome, ", $_SESSION['username']; 
                     }
                     else{
-                        echo "";
+                        echo "Welcome, user...";
                     }?>
                 </a>
             </li>

@@ -6,7 +6,6 @@
         <link rel="stylesheet" href="main.css">
         <link rel="stylesheet" href="index.css">
         <link rel="icon" type="image/x-icon" href="img/logo2.png">
-        <script src="main.js"></script>
         
 
     </head>
