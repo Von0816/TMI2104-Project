@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="main.css">
         <link rel="stylesheet" href="carInfo.css">
         <link rel="icon" type="image/x-icon" href="img/logo2.png">
-        <script src="main.js"></script>
+        <script src="index.js"></script>
         
 
     </head>
@@ -25,7 +25,12 @@
                     <p>Paint : Metallic</p>
                     <p>Gearbox : Manual</p>
                     <h4>£249.53/mth including VAT</h4>
-                    <a href="Checkout.html"><button type="button">Book Now </button>
+                    
+                    <form action="booking.php" name="carForm" method="post">
+                        <input type="hidden" id ="carType" name="carType" vaLue="4"/>
+                        <a><button type="submit" name = "submit">Book Now </button>
+                    </form>
+
                 </div>
                 <div class="col-2">
                     <img src="img\Hyundai Tucson.jpg" class ="car">
