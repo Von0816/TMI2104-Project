@@ -1,0 +1,119 @@
+body{
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.faq {
+	padding: 20px;
+	text-align: left;
+	font-size: 20px;
+	background-color: #A3E4DB;
+	color: white;
+}
+
+.container1{
+	padding: 0px 20px 100px;
+}
+
+h1{
+	font-family: Open Sans Serif;
+	font-weight: bold;
+}
+
+h1.text1{
+	font-size: 50px;
+}
+
+p{
+	font-size: 18px;
+}
+
+/*photo used for form*/
+.bg-img {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), url("img/contact us bg photo.jpg");
+	height: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+}
+
+
+.top-text {
+	text-align: left;
+	position: absolute;
+	top: 50%;
+	left: 30%;
+	transform: translate(-50%, -50%);
+	color: white;
+}
+
+
+/*form container*/
+.container {
+  position: absolute;
+  right: 30;
+  margin: 10px;
+  max-width: 500px;
+  padding: 16px;
+  background-color: rgba(0,0,0,.5);
+  color: #fff;
+}
+
+/*form details*/
+input[type=text], select, textarea {
+	width: 100%;
+	padding: 15px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	margin-top: 6px;
+	margin-bottom: 16px;
+	resize: vertical;
+}
+
+input[type=text]:focus, select:focus, textarea:focus {
+	background-color: #ddd;
+	outline: none;
+}
+
+/*submit button*/
+.submit-btn {
+	background-color: #1987D4;
+	color: white;
+	padding: 15px;
+	width: 100%;
+	border: none;
+	border-radius: 25px;
+	cursor: pointer;
+	font-size: 18px;
+	transition: all 0.6s;
+}
+
+.submit-btn:hover span{
+	padding-right: 40px;
+}
+
+
+.submit-btn:hover span:after{
+	opacity: 1;
+	right: 0;
+}
+
+
+.submit-btn span{
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.6s;
+}
+
+.submit-btn span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.6s;
+}
+
+
