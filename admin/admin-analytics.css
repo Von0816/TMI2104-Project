@@ -1,0 +1,49 @@
+#main-panel {
+    display: flex;
+    flex-flow: column;
+    gap: 1.5em;
+}
+
+#panel-header {
+    font-size: 2em;
+}
+
+#cards-collection {
+    display: flex;
+    gap: 2rem;
+    height: max-content;
+}
+
+.cards-item {
+    display: flex;
+    flex-flow: column;
+    height: max-content;
+    width: max-content;
+    background-color: #47B5FF;
+    border-radius: 1.2rem;
+    box-shadow: 0px 0px .5rem rgba(6, 40, 61, .5);
+    padding: 1rem;
+}
+
+.card-header {
+    margin: 0.1em;
+}
+
+.card-detail {
+    margin: 0.1em;
+}
+
+.card-date {
+    margin: 0.1em;
+}
+
+#myChart {
+    background-color: #EFFFFD;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0px 0px .5rem rgba(6, 40, 61, .5);
+}
+
+#chart-canvas{
+    width: 50rem;
+}
