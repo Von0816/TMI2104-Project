@@ -81,7 +81,7 @@ padding: 7px 0;
 font-size: 24px;
 }
 
-.btn {
+.btn_submit {
 background-color: #003ba8;
 color: whitesmoke;
 padding: 12px;
@@ -93,7 +93,7 @@ cursor: pointer;
 font-size: 17px;
 }
 
-.btn:hover {
+.btn_submit:hover {
 background-color: #45a049;
 }
 
