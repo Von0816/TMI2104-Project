@@ -1,8 +1,8 @@
 <?php 
-    include($_SERVER['DOCUMENT_ROOT']."/Project 1/connection.php");
+    include("connection.php");
     if(isset($_POST['del-btn'])){
         $id = $_POST['del-btn'];
-        $sql = "DELETE FROM admin WHERE adminID = $id";
+        $sql = "DELETE FROM member WHERE memberID = $id";
         $result = mysqli_query($link, $sql);
         if($result){
             header('Location: admin-users.php');

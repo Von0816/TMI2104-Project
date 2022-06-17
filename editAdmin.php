@@ -1,19 +1,10 @@
 <?php
-$server = "localhost";
-$user = "root";
-$password = "bDQ349@tmYkGNq#s";
-$db = "lingscars";
-
-$conn = new mysqli($server, $user, $password, $db);
-
-if($conn->connect_error){
-    die("Connection failed:" . $conn->connect_error);
-}
+    include("connection.php");
 
 if(isset($_POST['submit'])){
-    $adminID = $_POST['adminID'];
-    $adminUsername = $_POST['adminUsername'];
-    $adminPassword = $_POST['adminPasword'];
+    $adminID = $_POST['editAdminID'];
+    $adminUsername = $_POST['editAdminUsername'];
+    $adminPassword = $_POST['editAdminPasword'];
 
     $sql = "UPDATE admin SET adminUsername = $adminUsername WHERE adminID = $adminID";
     $result = $conn->query($sql);

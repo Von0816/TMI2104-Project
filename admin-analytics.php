@@ -1,12 +1,13 @@
 <!DOCTYPE html>
     <head>
-        <link rel="stylesheet" href="/main.css">
-        <link rel="stylesheet" href="/admin/admin.css">
-        <link rel="stylesheet" href="/admin/admin-analytics.css">
+        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="admin.css">
+        <link rel="stylesheet" href="admin-analytics.css">
         <style>@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');</style> 
         <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
-        <script src="/main.js"></script>
-        <script src="/admin/admin.js"></script>
+        <script src="main.js"></script>
+        <script src="admin.js"></script>
+        <script src="admin-analytics.js"></script>
     </head>
     <body>
         <div id="sidebar">

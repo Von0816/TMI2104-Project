@@ -8,9 +8,10 @@
     width: fit-content;
 }
 
-table {
-    width: fit-content;
-}
+/* #adminUsername {
+    border: none;
+} */
+
 /* .save-btn {
     background-color: greenyellow;
     border: none;

@@ -1,24 +1,3 @@
-// anime({
-//     target: '.cards-item',
-//     translateX: 250
-// })
-
-function btnClickListener(value){
-    if(value === "analytics"){
-        window.location.href = "/admin/admin-analytics.html";
-    }
-    if(value === "users"){
-        window.location.href = "/admin/admin-users.html";
-    }
-    if(value === "cars"){
-        window.location.href = "/admin/admin-cars.html";
-    }
-    if(value === "bookings"){
-        window.location.href = "/admin/admin-bookings.html";
-    }
-    
-}
-
 window.onload = () =>{
     const ctx = document.getElementById('myChart').getContext('2d');
     const myChart = new Chart(ctx, {
