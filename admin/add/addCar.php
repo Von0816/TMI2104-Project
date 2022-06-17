@@ -1,7 +1,7 @@
 <?php
-    include("connection.php");
+    include("../../connection.php");
 
-    if(isset($_POST['submit'])){
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
         $carID = filterInput($_POST['carID']);
         $carName = filterInput($_POST['carName']);
         $carBody = filterInput($_POST['carBody']);
@@ -19,14 +19,17 @@
         $sql = "INSERT INTO car(carID, carName, carBody, carTrim, carFuel, carBHP, carGearBox, carPaint, carTerm, carMonthlyRate) VALUES('$carID','$carName','$carBody','$carTrim','$carFuel','$carBHP','$carGearBox','$carPaint','$carTerm','$carMonthlyRate')";
                     $result = mysqli_query($link, $sql);
                     if($result){
-                        header('Location: admin-cars.php?Message='.urlencode('Car added'));
+                        echo "<script type='text/javascript'>alert('Car Added')</script>";
+                        echo "<script type='text/javascript'>window.location.replace('../admin-cars.php')</script>";
                     }
                     else {
-                        header('Location: admin-cars.php?Message='.urlencode('Failed to add car'));
+                        echo "<script type='text/javascript'>alert('Failed')</script>";
+                        echo "<script type='text/javascript'>window.location.replace('../admin-cars.php')</script>";
                     }
                 }
                 else {                    
-                    header('Location: admin-cars.php?Message='.urlencode('Car already existed'));
+                    echo "<script type='text/javascript'>alert('Card Already Exists')</script>";
+                    echo "<script type='text/javascript'>window.location.replace('../admin-cars.php')</script>";
                 }
 
     }

@@ -1,7 +1,7 @@
 <?php
-    include("connection.php");
+    include("../../connection.php");
 
-    if(isset($_POST['submit'])){
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
         $memberID = filterInput($_POST['memberID']);
         $memberUsername = filterInput($_POST['memberUsername']);
         $memberPassword = filterInput($_POST['memberPassword']);
@@ -17,14 +17,14 @@
         $sql = "INSERT INTO member(memberID, memberUsername, memberName, memberGender, memberAddress, memberEmail, memberHP, memberPassword) VALUES('$memberID', '$memberUsername', '$memberName', '$memberGender', '$memberAddress', '$memberEmail', '$memberHP', '$memberPassword')";
                     $result = mysqli_query($link, $sql);
                     if($result){
-                        header('Location: admin-users.php?Message='.urlencode('Member added'));
+                        header('Location: ../admin-users.php?Message='.urlencode('Member added'));
                     }
                     else {
-                        header('Location: admin-users.php?Message='.urlencode('Failed to add member'));
+                        header('Location: ../admin-users.php?Message='.urlencode('Failed to add member'));
                     }
                 }
                 else {                    
-                    header('Location: admin-users.php?Message='.urlencode('Member already existed'));
+                    header('Location: ../admin-users.php?Message='.urlencode('Member already existed'));
                 }
 
     }

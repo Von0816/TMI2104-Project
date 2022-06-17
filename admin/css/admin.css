@@ -75,7 +75,8 @@ table th {
 
 table td {
     margin: 0;
-    height: 2em;
+    height: max-content;
+    width: max-content;
     border-bottom: 1px solid grey;
     padding-right: 1em;
     padding-top: .5em;

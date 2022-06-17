@@ -1,6 +1,6 @@
 <?php
 
-    include("connection.php");
+    include("../../connection.php");
 
     if($_SERVER["REQUEST_METHOD"] == "POST"){
 
@@ -13,14 +13,14 @@
             $sql = "INSERT INTO admin(adminID, adminUsername, adminPassword) VALUES('$adminID', '$adminUsername', '$adminPassword')";
             $result = mysqli_query($link, $sql);
             if($result){
-                header('Location: admin-users.php?Message='.urlencode('Admin added'));
+                header('Location: ../admin-users.php?Message='.urlencode('Admin added'));
             }
             else {
-                header('Location: admin-users.php?Message='.urlencode('Failed to add admin'));
+                header('Location: ../admin-users.php?Message='.urlencode('Failed to add admin'));
             }
         }
         else {                    
-            header('Location: admin-users.php?Message='.urlencode('Admin already existed'));
+            header('Location: ../admin-users.php?Message='.urlencode('Admin already existed'));
         }
 
     }

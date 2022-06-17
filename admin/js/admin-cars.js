@@ -1,5 +1,6 @@
 const addCarForm = document.getElementById("addCarForm");
 const editCarForm = document.getElementById("editCarForm");
+
 addCarForm.addEventListener('submit', (e) => {
     const carID = document.getElementById("carID");
     const carName = document.getElementById("carName");
@@ -40,7 +41,7 @@ addCarForm.addEventListener('submit', (e) => {
         setError(carBHP, "Please enter car BHP");
         e.preventDefault();
     }
-    else if(!validateNum(Number(carBHP.value))){
+    else if(!(validateNumber(Number(carBHP.value)))){
         setError(carBHP, "Must only contain number");
         e.preventDefault();
     }
@@ -56,11 +57,11 @@ addCarForm.addEventListener('submit', (e) => {
         setError(carTerm, "Please enter term");
         e.preventDefault();
     }
-    else if(carMonthlyRate.value === 0){
+    else if(Number(carMonthlyRate.value) === 0){
         setError(carMonthlyRate, "Please enter car monthly rate");
         e.preventDefault();
     }
-    else if(!validateFloat(carMonthlyRate.value)){
+    else if(!(validateFloat(Number(carMonthlyRate.value)))){
         setError(carMonthlyRate, "Enter a valid rate");
         e.preventDefault();
     }
@@ -121,4 +122,58 @@ function validateEmail(email){
         return false;
     }
     return true;
+}
+
+function editCar(id){
+    const row = document.getElementById(id);
+    const col = row.getElementsByTagName("td");
+    const oldBtn = [];
+    const newBtn = [document.createElement("button"), document.createElement("button")]
+    for(let i in col){
+        if(col[i].childElementCount === 1){
+            const inputList = col[i].getElementsByTagName("input");
+            for (let j in inputList){
+                inputList[j].disabled = false;
+            }
+        }
+    }
+    newBtn[0].innerText = "Save";
+    newBtn[0].type = "submit";
+    newBtn[0].value = id;
+    newBtn[0].name = "updateCar";
+    newBtn[0].classList.add("save-btn");
+    newBtn[0].setAttribute("form", "editCarForm");
+
+    newBtn[1].innerText = 'Cancel';
+    newBtn[1].classList.add("cancel-btn");
+    newBtn[1].addEventListener('click', () => {
+        for(let i in col){
+            if(col[i].childElementCount > 0){
+                const inputList = col[i].getElementsByTagName("input");
+                for (let j in inputList){
+                    inputList[j].disabled = true;
+                }
+            }
+        }
+        for(let i in col){
+            if(col[i].getElementsByTagName("button").length > 0){
+                while(col[i].lastElementChild){
+                    col[i].removeChild(col[i].lastElementChild);
+                }
+                col[i].append(oldBtn[1], oldBtn[0]);
+            }
+        }
+    })
+    for(let i in col){
+        if(col[i].childElementCount > 0){
+            if(col[i].getElementsByTagName("button").length > 0){
+                while(col[i].lastElementChild){
+                    oldBtn.push(col[i].lastElementChild.cloneNode(true));
+                    col[i].removeChild(col[i].lastElementChild);
+                }
+                col[i].append(newBtn[0], newBtn[1]);
+            }
+        }
+
+    }
 }

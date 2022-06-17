@@ -1,13 +1,13 @@
-<?php include("connection.php") ?>
+<?php include("../connection.php") ?>
 
 <!DOCTYPE html>
     <head>
-        <link rel="stylesheet" href="main.css">
-        <link rel="stylesheet" href="admin.css">
+        <link rel="stylesheet" href="../main.css">
+        <link rel="stylesheet" href="css/admin.css">
         <style>@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');</style> 
         <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
         <script src="main.js"></script>
-        <script src="admin.js"></script>
+        <script src="js/admin.js"></script>
     </head>
     <body>
         <div id="sidebar">
@@ -15,12 +15,15 @@
             <div class="sidebar-item sidebar-btn" id="analytics-btn" onclick="btnClickListener('analytics')">Analytics</div> 
             <div class="sidebar-item sidebar-btn" id="users-btn" onclick="btnClickListener('users')">Users</div>
             <div class="sidebar-item sidebar-btn" id="cars-btn" onclick="btnClickListener('cars')">Cars</div>
-            <div class="sidebar-item sidebar-btn" id="bookings-btn" onclick="btnClickListener('bookings')">Bookings</div>
+            <div class="sidebar-item sidebar-btn active" id="bookings-btn" onclick="btnClickListener('bookings')">Bookings</div>
+            <div class="sidebar-item sidebar-btn" id="payments-btn" onclick="btnClickListener('payments')">Payments</div>
+
         </div>
         <div class="mainbar" id="main-panel">
             <div class="table-container">
             <h1>Bookings</h1>
-                <table id="cars-table">
+                <form action="delete/delBooking.php" method="POST" id="delBookingForm"></form>
+                <table id="bookings-table">
                     <tr>
                         <th>Booking ID</th>
                         <th>Member ID</th>
