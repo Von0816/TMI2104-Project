@@ -38,7 +38,27 @@
             </div> -->
             <div id="car-grid">
                 <script>
-                    generate();
+                    <?php
+                        $sql = "SELECT * FROM cars";
+                        $result = $conn->query($sql);
+                        if($result->num_rows>0){
+                            while($row = $result->fetch_assoc()){
+                                echo "<a class='card' id=".$row['carID']." href=''>
+                                        <img src='imgpathname' alt=''>
+                                                <div class='details'>
+                                                <h3>".$row['carName']."</h3>
+                                                <p>".$row['carFuel']." | ".$row['carGearBox']." | ".$row['carBHP']."BHP</p>
+                                                <div class='price'>
+                                                    <h4>Starting At: </h4>
+                                                    <h4>".$row['carMonthlyRate']."/month<sup>*including VAT</sup></h4>
+                                                </div>
+                                            </div>
+                                        </a>";
+                            }
+                        }
+                        
+                    
+                    ?>
                 </script>
             </div>
         </div>
