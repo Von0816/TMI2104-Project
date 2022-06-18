@@ -14,6 +14,9 @@ function btnClickListener(value){
     if(value === "payments"){
         window.location.href = "admin-payments.php";
     }
+    if(value === "logout"){
+        window.location.href = "../../logout.php";
+    }
     
 }
 

@@ -147,8 +147,8 @@
             background-color: #fefefe;
             border: 1px solid #888;
             margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-            width: 50%; /* Could be more or less, depending on screen size */
-            height: 84%;
+            width: fit-content; /* Could be more or less, depending on screen size */
+            height: fit-content;
             padding-top: 50px;
             padding-right: 10px;
             padding-left: 180px;
@@ -211,7 +211,7 @@
     <nav>
         <ul id="nav-list">
             <li class="nav-list-item">
-                <a href="indexMember.php">
+                <a href="index.php">
                 <img id="nav-logo" src="img/logo.png" alt="logo">
                 </a>
             </li>
@@ -226,24 +226,37 @@
             </li>
 
             <li>
-                <a id="welcomeText" >
+                <a id="welcomeText" class="align-self-end">
                     <?php 
                     if (isset($_SESSION['username'])){
                         echo "Welcome, ", $_SESSION['username']; 
                     }
                     else{
-                        echo "Welcome, user...";
+                        echo "Welcome, guest...";
                     }?>
                 </a>
             </li>
+            <?php
+                if(isset($_SESSION['accLevel'])){
+                    if($_SESSION['accLevel'] == 'admin'){
+                        echo "<li class='nav-list-item'>";
+                        echo "<a class='button' href='indexAdmin.php'>Dashboard</a>";
+                        echo "</li>";
+                    }
+                }
+                if(!(isset($_SESSION['username']))){
+                    echo "<li class='nav-list-item loginButton align-self-end'>";
+                    echo "<button onclick="."document.getElementById('loginID').style.display='block'"." class = 'btn'>Login</button>";
+                    echo "</li>";
+                }
+                else {
+                    echo "<li class='nav-list-item align-self-end'>
+                            <button onclick='myLogOutFunction()' class = 'btn'>Logout</button>
+                        </li>";
+                }
+            ?>
 
-            <li class="nav-list-item loginButton">
-                <button onclick="document.getElementById('loginID').style.display='block'" class = "btn">Login</button>
-            </li>
 
-            <li class="nav-list-item align-self-end">
-                <button onclick="myLogOutFunction()" class = "btn">Logout</button>
-            </li>
         </ul>
     </nav>
 

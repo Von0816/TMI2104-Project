@@ -12,6 +12,7 @@
     </head>
     <body>
         <div id="sidebar">
+            <div class="sidvar-item logout-btn" onclick="btnClickListener('logout')">Logout</div>
             <h1>Admin Dashboard</h1>
             <div class="sidebar-item sidebar-btn" id="analytics-btn" onclick="btnClickListener('analytics')">Analytics</div> 
             <div class="sidebar-item sidebar-btn" id="users-btn" onclick="btnClickListener('users')">Users</div>
