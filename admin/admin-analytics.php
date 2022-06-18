@@ -5,11 +5,18 @@
     $result = mysqli_query($link, $query);
     $customerCount = mysqli_num_rows($result);
 
-
+    $mth = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
+    $mthlySales = array();
+    for($i = 0; $i < count($mth); $i++){
+        $query = "SELECT * FROM booking WHERE bookingStatus = 'completed' AND (EXTRACT(MONTH FROM bookingDate) = $mth[$i])";
+        $result = mysqli_query($link, $query);
+        array_push($mthlySales, mysqli_num_rows($result));
+    }
     $query = "SELECT * FROM booking WHERE bookingStatus = 'completed'";
     $result = mysqli_query($link, $query);
     $carSold = mysqli_num_rows($result);
 
+    // echo json_encode($mthlySales);
 ?>
 
 <!DOCTYPE html>
@@ -22,6 +29,7 @@
         <script src="main.js"></script>
         <script src="js/admin.js"></script>
         <script src="js/admin-analytics.js"></script>
+
     </head>
     <body>
         <div id="sidebar">
@@ -49,6 +57,9 @@
             <div id="chart-canvas">
                 <canvas id="myChart" width="400"></canvas>
             </div>
+            <script>
+                generateGraph(<?php echo json_encode($mthlySales) ?>)
+            </script>
         </div>
     </body>
 </html>
