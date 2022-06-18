@@ -23,6 +23,10 @@
             <div class="table-container">
             <h1>Bookings</h1>
                 <form action="delete/delPayment.php" method="POST" id="delPaymentForm"></form>
+                <form class="search-form" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
+                    <input type="number" name="searchPaymentID" required>
+                    <button type="submit" name="searchPaymentBtn">Search</button>
+                </form>
                 <table id="payments-table">
                     <tr>
                         <th>Payment ID</th>
@@ -42,30 +46,90 @@
                         <th>CVV</th>
                     </tr>
                     <?php
-                            $query  = "SELECT * FROM payment";
-                            $result = mysqli_query($link, $query);
-                            if($result->num_rows > 0){
-                                while($row = $result->fetch_assoc()){
-                                    echo "  <tr id=".$row['paymentID'].">
-                                                <td>".$row['paymentID']."</td>
-                                                <td>".$row['bookingID']."</td>
-                                                <td>".$row['paymentDateTime']."</td>
-                                                <td>".$row['paymentMethod']."</td>
-                                                <td>".$row['billing_fName']."</td>
-                                                <td>".$row['billing_lName']."</td>
-                                                <td>".$row['billing_email']."</td>
-                                                <td>".$row['billing_addr']."</td>
-                                                <td>".$row['billing_city']."</td>
-                                                <td>".$row['billing_state']."</td>
-                                                <td>".$row['nameOnCard']."</td>
-                                                <td>".$row['cardNum']."</td>
-                                                <td>".$row['cardEXPmonth']."</td>
-                                                <td>".$row['cardEXPyear']."</td>
-                                                <td>".$row['card_CVV']."</td>
-                                                <td class='action-btn-group'>
-                                                    <button form='delPaymentForm' class='del-btn' name='del-btn' value=".$row['paymentID'].">Delete</button>
-                                                </td>
-                                            </tr>";
+                            if(isset($_POST['searchPaymentBtn'])){
+                                $id = $_POST['searchPaymentID'];
+                                $search = "SELECT * FROM payment where paymentID = $id";
+                                $result = mysqli_query($link, $search);
+                                if($result->num_rows > 0){
+                                    while($row = $result->fetch_assoc()){
+                                        echo "  <tr id=".$row['paymentID'].">
+                                                    <td>".$row['paymentID']."</td>
+                                                    <td>".$row['bookingID']."</td>
+                                                    <td>".$row['paymentDateTime']."</td>
+                                                    <td>".$row['paymentMethod']."</td>
+                                                    <td>".$row['billing_fName']."</td>
+                                                    <td>".$row['billing_lName']."</td>
+                                                    <td>".$row['billing_email']."</td>
+                                                    <td>".$row['billing_addr']."</td>
+                                                    <td>".$row['billing_city']."</td>
+                                                    <td>".$row['billing_state']."</td>
+                                                    <td>".$row['nameOnCard']."</td>
+                                                    <td>".$row['cardNum']."</td>
+                                                    <td>".$row['cardEXPmonth']."</td>
+                                                    <td>".$row['cardEXPyear']."</td>
+                                                    <td>".$row['card_CVV']."</td>
+                                                    <td class='action-btn-group'>
+                                                        <button form='delPaymentForm' class='del-btn' name='del-btn' value=".$row['paymentID'].">Delete</button>
+                                                    </td>
+                                                </tr>";
+                                    }
+                                }
+                                else {
+                                    echo "<script type='text/javascript'>alert('Payment not found')</script>";
+                                    $query  = "SELECT * FROM payment";
+                                    $result = mysqli_query($link, $query);
+                                    if($result->num_rows > 0){
+                                        while($row = $result->fetch_assoc()){
+                                            echo "  <tr id=".$row['paymentID'].">
+                                                        <td>".$row['paymentID']."</td>
+                                                        <td>".$row['bookingID']."</td>
+                                                        <td>".$row['paymentDateTime']."</td>
+                                                        <td>".$row['paymentMethod']."</td>
+                                                        <td>".$row['billing_fName']."</td>
+                                                        <td>".$row['billing_lName']."</td>
+                                                        <td>".$row['billing_email']."</td>
+                                                        <td>".$row['billing_addr']."</td>
+                                                        <td>".$row['billing_city']."</td>
+                                                        <td>".$row['billing_state']."</td>
+                                                        <td>".$row['nameOnCard']."</td>
+                                                        <td>".$row['cardNum']."</td>
+                                                        <td>".$row['cardEXPmonth']."</td>
+                                                        <td>".$row['cardEXPyear']."</td>
+                                                        <td>".$row['card_CVV']."</td>
+                                                        <td class='action-btn-group'>
+                                                            <button form='delPaymentForm' class='del-btn' name='del-btn' value=".$row['paymentID'].">Delete</button>
+                                                        </td>
+                                                    </tr>";
+                                        }
+                                    }
+                                }
+                            }
+                            else {
+                                $query  = "SELECT * FROM payment";
+                                $result = mysqli_query($link, $query);
+                                if($result->num_rows > 0){
+                                    while($row = $result->fetch_assoc()){
+                                        echo "  <tr id=".$row['paymentID'].">
+                                                    <td>".$row['paymentID']."</td>
+                                                    <td>".$row['bookingID']."</td>
+                                                    <td>".$row['paymentDateTime']."</td>
+                                                    <td>".$row['paymentMethod']."</td>
+                                                    <td>".$row['billing_fName']."</td>
+                                                    <td>".$row['billing_lName']."</td>
+                                                    <td>".$row['billing_email']."</td>
+                                                    <td>".$row['billing_addr']."</td>
+                                                    <td>".$row['billing_city']."</td>
+                                                    <td>".$row['billing_state']."</td>
+                                                    <td>".$row['nameOnCard']."</td>
+                                                    <td>".$row['cardNum']."</td>
+                                                    <td>".$row['cardEXPmonth']."</td>
+                                                    <td>".$row['cardEXPyear']."</td>
+                                                    <td>".$row['card_CVV']."</td>
+                                                    <td class='action-btn-group'>
+                                                        <button form='delPaymentForm' class='del-btn' name='del-btn' value=".$row['paymentID'].">Delete</button>
+                                                    </td>
+                                                </tr>";
+                                    }
                                 }
                             }
                     ?>

@@ -29,6 +29,9 @@
         if(empty($memberPassword)){
             $error .= "Member Password cannot be blank\\n";
         }
+        else if(strlen($memberPassword) != 6){
+            $error .= "Member Password must be 6 character long \\n";
+        }
         else if(!preg_match("/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s)/", $memberPassword)){
           $error .= "Password must contain at least one uppercase, one lowercase, one numeric and one special character. Must not contain whitespace\\n";
         }
@@ -56,7 +59,7 @@
         if(empty($memberHP)){
             $error .= "Member HP cannot be blank\\n";
         }
-        else if(!preg_match("/(^[0-9]*$){1,15}/", $memberHP)){
+        else if(!preg_match("/^\+(\d{2})(\d{5,13}$)/", $memberHP)){
             $error .= "Enter a valid HP";
         }
         if(empty($error)){

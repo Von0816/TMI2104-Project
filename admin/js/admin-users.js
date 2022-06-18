@@ -16,7 +16,7 @@ const validateAdmin = (e) => {
         e.preventDefault();
     }
     else if(!validateNumber(idVal)){
-        setError(input, "Member ID can only contain number");
+        setError(input, "Admin ID can only contain number");
         e.preventDefault();
     }
     else if(usernameVal === ''){
@@ -24,7 +24,7 @@ const validateAdmin = (e) => {
         e.preventDefault();
     }
     else if(!validateString(usernameVal)){
-        setError(input, "Must be alphanumeric");
+        setError(input, "Admin username must be alphanumeric");
         e.preventDefault();
     }
     else if(pswVal === ''){
@@ -32,7 +32,7 @@ const validateAdmin = (e) => {
         e.preventDefault()
     } 
     else if(!validatePassword(pswVal)){
-        setError(psw, "Password must contain at least one uppercase, one lowercase, one numeric and one special character. Must not contain whitespace");
+        setError(psw, "admin password must contain at least one uppercase, one lowercase, one numeric and one special character. Must not contain whitespace");
         e.preventDefault()
     }
 }
@@ -58,15 +58,19 @@ const validateMember = (e) => {
         e.preventDefault();j
     }
     else if(!validateString(memberUsername.value)){
-        setError(memberUsername, "Username must be alphanumeric w/o spaces");
+        setError(memberUsername, "Member username must be alphanumeric w/o spaces");
         e.preventDefault();
     }
     else if(memberPassword.value.trim() === ''){
-        setError(memberPassword, "Please enter user password");
+        setError(memberPassword, "Please enter member password");
+        e.preventDefault();
+    }
+    else if(memberPassword.value.length != 6){
+        setError(memberPassword, "Member password must be 6 character long");
         e.preventDefault();
     }
     else if (!validatePassword(memberPassword.value)){
-        setError(memberPassword, "Password must contain at least one uppercase, one lowercase, one numeric and one special character. Must not contain whitespace");
+        setError(memberPassword, "Member password contain at least one uppercase, one lowercase, one numeric and one special character. Must not contain whitespace");
         e.preventDefault();
     }
     else if (memberName.value.trim() === ''){
@@ -74,15 +78,11 @@ const validateMember = (e) => {
         e.preventDefault();
     }
     else if(!validateStrWS(memberName.value)){
-        setError(memberName, "Must only contains letters and spaces");
+        setError(memberName, "member name can only contains letters and spaces");
         e.preventDefault();
     }
     else if(memberGender.value.trim() === ''){
-        setError(memberGender, "Please enter member gender");
-        e.preventDefault();
-    }
-    else if(!validateStringWoWS(memberGender.value)){
-        setError(memberGender, "Must only contain letter");
+        setError(memberGender, "Please select member gender");
         e.preventDefault();
     }
     else if(memberAddress.value.trim() === ''){
@@ -94,7 +94,7 @@ const validateMember = (e) => {
         e.preventDefault();
     }
     else if(!validateEmail(memberEmail.value)){
-        setError(memberEmail, "Enter a valid email");
+        setError(memberEmail, "Enter a valid member email");
         e.preventDefault();
     }
     else if(memberHP.value.trim() === ''){
@@ -102,7 +102,7 @@ const validateMember = (e) => {
         e.preventDefault();
     }
     else if(!validateHP(memberHP.value)){
-        setError(memberHP, "Please enter a valid HP and not more than 15 digits");
+        setError(memberHP, "Please enter a member valid HP and not more than 15 digits");
         e.preventDefault();
     }
 }
@@ -113,7 +113,7 @@ addMemberForm.addEventListener('submit', validateMember);
 
 
 function validateHP(hp){
-    if(!(/(^[0-9]*$){1,15}/.test(hp))){
+    if(!(/^\+(\d{2})(\d{5,13}$)/.test(hp))){
         return false;
     }
     return true;
@@ -146,7 +146,7 @@ function validateStrWS(str){
 }
 
 function validatePassword(psw){
-    if(!(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s)/.test(psw))){
+    if(!(/^((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s))/.test(psw))){
         return false;
     }
     return true;
@@ -166,8 +166,8 @@ function validateEmail(email){
     return true;
 }
 
-function editAdmin(id){
-    const row = document.getElementById(id);
+function editAdmin(rowID, adminID){
+    const row = document.getElementById(rwoID);
     const col = row.getElementsByTagName("td");
     const oldBtn = [];
     const newBtn = [document.createElement("button"), document.createElement("button")]
@@ -181,7 +181,7 @@ function editAdmin(id){
     }
     newBtn[0].innerText = "Save";
     newBtn[0].type = "submit";
-    newBtn[0].value = id;
+    newBtn[0].value = adminID;
     newBtn[0].name = "updateAdmin";
     newBtn[0].id = "updateAdmin";
     newBtn[0].classList.add("save-btn");
@@ -212,22 +212,26 @@ function editAdmin(id){
 
 }
 
-function editMember(id){
-    const row = document.getElementById(id);
+function editMember(rowID, memberID){
+    const row = document.getElementById(rowID);
     const col = row.getElementsByTagName("td");
     const oldBtn = [];
     const newBtn = [document.createElement("button"), document.createElement("button")]
     for(let i in col){
         if(col[i].childElementCount === 1){
-            const inputList = col[i].getElementsByTagName("input");
+            const inputList = [];
+            inputList.push(col[i].getElementsByTagName("input"));
+            inputList.push(col[i].getElementsByTagName("select"));
             for (let j in inputList){
-                inputList[j].disabled = false;
+                for (let k in inputList[j]){
+                    inputList[j][k].disabled = false;
+                }
             }
         }
     }
     newBtn[0].innerText = "Save";
     newBtn[0].type = "submit";
-    newBtn[0].value = id;
+    newBtn[0].value = memberID;
     newBtn[0].name = "updateMember";
     newBtn[0].classList.add("save-btn");
     newBtn[0].setAttribute("form", "editMemberForm");
@@ -235,14 +239,18 @@ function editMember(id){
     newBtn[1].innerText = 'Cancel';
     newBtn[1].classList.add("cancel-btn");
     newBtn[1].addEventListener('click', () => {
-        for(let i in col){
-            if(col[i].childElementCount > 0){
-                const inputList = col[i].getElementsByTagName("input");
-                for (let j in inputList){
-                    inputList[j].disabled = true;
+    for(let i in col){
+        if(col[i].childElementCount === 1){
+            const inputList = [];
+            inputList.push(col[i].getElementsByTagName("input"));
+            inputList.push(col[i].getElementsByTagName("select"));
+            for (let j in inputList){
+                for (let k in inputList[j]){
+                    inputList[j][k].disabled = true;
                 }
             }
         }
+    }
         for(let i in col){
             if(col[i].getElementsByTagName("button").length > 0){
                 while(col[i].lastElementChild){

@@ -70,28 +70,29 @@
                             $result = mysqli_query($link, $search);
                             if($result->num_rows > 0){
                                 while($row = $result->fetch_assoc()){
-                                    echo "  <tr id=".$row['adminID'].">
+                                    echo "  <tr id='admin-".$row['adminID']."'>
                                                         <td>".$row['adminID']."</td>
-                                                        <td><input type='text' class='no-border-input' form='editAdminForm' name='adminUsername-".$row['adminID']."' value=".$row['adminUsername']." disabled></td>
-                                                        <td><input type='text' class='no-border-input' form='editAdminForm' name='adminPassword-".$row['adminID']."' value=".$row['adminPassword']." disabled></td>
+                                                        <td><input type='text' class='no-border-input' form='editAdminForm' name='adminUsername-".$row['adminID']."' value='".$row['adminUsername']."' disabled></td>
+                                                        <td><input type='text' class='no-border-input' form='editAdminForm' name='adminPassword-".$row['adminID']."' value='".$row['adminPassword']."' disabled></td>
                                                         <td class='action-btn-group'>
-                                                                <button class='edit-btn' onclick="."editAdmin(".$row['adminID'].")>Edit</button>
+                                                                <button class='edit-btn' onclick="."editAdmin('admin-".$row['adminID']."',".$row['adminID'].")>Edit</button>
                                                                 <button class='del-btn' type='submit' name='del-btn' form='delAdminForm' value=".$row['adminID'].">Delete</button>
                                                         </td>
                                                     </tr>";
                                 }
                             }
                             else {
-                                echo "<script type='text/javascript'>alert('Admin not found')</script>";$adminQuery  = "SELECT * FROM admin";
-                                $result = mysqli_query($link, $adminQuery);
+                                echo "<script type='text/javascript'>alert('Admin not found')</script>";
+                                $query  = "SELECT * FROM admin";
+                                $result = mysqli_query($link, $query);
                                 if($result->num_rows > 0){
                                     while($row = $result->fetch_assoc()){
-                                    echo "  <tr id=".$row['adminID'].">
+                                    echo "  <tr id='admin-".$row['adminID']."'>
                                                         <td>".$row['adminID']."</td>
-                                                        <td><input type='text' class='no-border-input' form='editAdminForm' name='adminUsername-".$row['adminID']."' value=".$row['adminUsername']." disabled></td>
-                                                        <td><input type='text' class='no-border-input' form='editAdminForm' name='adminPassword-".$row['adminID']."' value=".$row['adminPassword']." disabled></td>
+                                                        <td><input type='text' class='no-border-input' form='editAdminForm' name='adminUsername-".$row['adminID']."' value='".$row['adminUsername']."' disabled></td>
+                                                        <td><input type='text' class='no-border-input' form='editAdminForm' name='adminPassword-".$row['adminID']."' value='".$row['adminPassword']."' disabled></td>
                                                         <td class='action-btn-group'>
-                                                                <button class='edit-btn' onclick="."editAdmin(".$row['adminID'].")>Edit</button>
+                                                                <button class='edit-btn' onclick="."editAdmin('admin-".$row['adminID']."',".$row['adminID'].")>Edit</button>
                                                                 <button class='del-btn' type='submit' name='del-btn' form='delAdminForm' value=".$row['adminID'].">Delete</button>
                                                         </td>
                                                     </tr>";
@@ -100,16 +101,16 @@
                             }
                         }
                         else{
-                            $adminQuery  = "SELECT * FROM admin";
-                            $result = mysqli_query($link, $adminQuery);
+                            $query  = "SELECT * FROM admin";
+                            $result = mysqli_query($link, $query);
                             if($result->num_rows > 0){
                                 while($row = $result->fetch_assoc()){
-                                    echo "  <tr id=".$row['adminID'].">
+                                    echo "  <tr id='admin-".$row['adminID']."'>
                                                         <td>".$row['adminID']."</td>
-                                                        <td><input type='text' class='no-border-input' form='editAdminForm' name='adminUsername-".$row['adminID']."' value=".$row['adminUsername']." disabled></td>
-                                                        <td><input type='text' class='no-border-input' form='editAdminForm' name='adminPassword-".$row['adminID']."' value=".$row['adminPassword']." disabled></td>
+                                                        <td><input type='text' class='no-border-input' form='editAdminForm' name='adminUsername-".$row['adminID']."' value='".$row['adminUsername']."' disabled></td>
+                                                        <td><input type='text' class='no-border-input' form='editAdminForm' name='adminPassword-".$row['adminID']."' value='".$row['adminPassword']."' disabled></td>
                                                         <td class='action-btn-group'>
-                                                                <button class='edit-btn' onclick="."editAdmin(".$row['adminID'].")>Edit</button>
+                                                                <button class='edit-btn' onclick="."editAdmin('admin-".$row['adminID']."',".$row['adminID'].")>Edit</button>
                                                                 <button class='del-btn' type='submit' name='del-btn' form='delAdminForm' value=".$row['adminID'].">Delete</button>
                                                         </td>
                                                     </tr>";
@@ -145,7 +146,11 @@
                         <td><input form="addMemberForm" type="text" name="memberUsername" id="memberUsername"></td>
                         <td><input form="addMemberForm" type="password" name="memberPassword" id="memberPassword"></td>
                         <td><input form="addMemberForm" type="text" name="memberName" id="memberName"></td>
-                        <td><input form="addMemberForm" type="text" name="memberGender" id="memberGender"></td>
+                        <td><select form="addMemberForm" name="memberGender" id="memberGender">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select></td>
                         <td><input form="addMemberForm" type="text" name="memberAddress" id="memberAddress"></td>
                         <td><input form="addMemberForm" type="email" name="memberEmail" id="memberEmail"></td>
                         <td><input form="addMemberForm" type="text" name="memberHP" id="memberHP"></td>
@@ -159,17 +164,23 @@
                             $result = mysqli_query($link, $query);
                             if($result->num_rows > 0){
                                 while($row = $result->fetch_assoc()){
-                                    echo "  <tr id=".$row['memberID'].">
+                                    echo "  <tr id='member-".$row['memberID']."'>
                                                 <td>".$row['memberID']."</td>
-                                                <td><input type='text' class='no-border-input' form='editMemberForm' name='memberUsername-".$row['memberID']."' value=".$row['memberUsername']." disabled></td>
-                                                <td><input type='text' class='no-border-input' form='editMemberForm' name='memberPassword-".$row['memberID']."' value=".$row['memberPassword']." disabled></td>
-                                                <td><input type='text' class='no-border-input' form='editMemberForm' name='name-".$row['memberID']."' value=".$row['memberName']." disabled></td>
-                                                <td><input type='text' class='no-border-input' form='editMemberForm' name='gender-".$row['memberID']."' value=".$row['memberGender']." disabled></td>
-                                                <td><input type='text' class='no-border-input' form='editMemberForm' name='address-".$row['memberID']."' value=".$row['memberAddress']." disabled></td>
-                                                <td><input type='email' class='no-border-input' form='editMemberForm' name='email-".$row['memberID']."' value=".$row['memberEmail']." disabled></td>
-                                                <td><input type='text' class='no-border-input' form='editMemberForm' name='HP-".$row['memberID']."' value=".$row['memberHP']." disabled></td>
+                                                <td><input type='text' class='no-border-input' form='editMemberForm' name='memberUsername-".$row['memberID']."' value='".$row['memberUsername']."' disabled></td>
+                                                <td><input type='text' class='no-border-input' form='editMemberForm' name='memberPassword-".$row['memberID']."' value='".$row['memberPassword']."' disabled></td>
+                                                <td><input type='text' class='no-border-input' form='editMemberForm' name='name-".$row['memberID']."' value='".$row['memberName']."' disabled></td>
+                                                <td>
+                                                    <select class='no-border-input' form='editMemberForm' name='gender-".$row['memberID']."' disabled>
+                                                        <option value='male' "; if($row['memberGender'] == 'male') {echo "selected";} echo ">Male</option>
+                                                        <option value='female' "; if($row['memberGender'] == 'female') {echo "selected";} echo">Female</option>
+                                                        <option value='other' "; if($row['memberGender'] == 'other') {echo "selected";} echo ">Other</option>
+                                                    </select>
+                                                </td>
+                                                <td><input type='text' class='no-border-input' form='editMemberForm' name='address-".$row['memberID']."' value='".$row['memberAddress']."' disabled></td>
+                                                <td><input type='email' class='no-border-input' form='editMemberForm' name='email-".$row['memberID']."' value='".$row['memberEmail']."' disabled></td>
+                                                <td><input type='text' class='no-border-input' form='editMemberForm' name='HP-".$row['memberID']."' value='".$row['memberHP']."' disabled></td>
                                                 <td class='action-btn-group'>
-                                                    <button class='edit-btn' onclick="."editMember(".$row['memberID'].")>Edit</button>
+                                                    <button class='edit-btn' onclick="."editMember('member-".$row['memberID']."',".$row['memberID'].")>Edit</button>
                                                     <button class='del-btn' type='submit' name='del-btn' form='delMemberForm' value=".$row['memberID'].">Delete</button>
                                                 </td>
                                             </tr>";
@@ -178,20 +189,27 @@
                             
                             else {
                                 echo "<script type='text/javascript'>alert('Member not found')</script>";$adminQuery  = "SELECT * FROM admin";
-                               $result = mysqli_query($link, $query);
+                                $query = "SELECT * FROM member";
+                                $result = mysqli_query($link, $query);
                                 if($result->num_rows > 0){
                                 while($row = $result->fetch_assoc()){
-                                    echo "  <tr id=".$row['memberID'].">
+                                    echo "  <tr id='member-".$row['memberID']."'>
                                                 <td>".$row['memberID']."</td>
-                                                <td><input type='text' class='no-border-input' form='editMemberForm' name='memberUsername-".$row['memberID']."' value=".$row['memberUsername']." disabled></td>
-                                                <td><input type='text' class='no-border-input' form='editMemberForm' name='memberPassword-".$row['memberID']."' value=".$row['memberPassword']." disabled></td>
-                                                <td><input type='text' class='no-border-input' form='editMemberForm' name='name-".$row['memberID']."' value=".$row['memberName']." disabled></td>
-                                                <td><input type='text' class='no-border-input' form='editMemberForm' name='gender-".$row['memberID']."' value=".$row['memberGender']." disabled></td>
-                                                <td><input type='text' class='no-border-input' form='editMemberForm' name='address-".$row['memberID']."' value=".$row['memberAddress']." disabled></td>
-                                                <td><input type='email' class='no-border-input' form='editMemberForm' name='email-".$row['memberID']."' value=".$row['memberEmail']." disabled></td>
-                                                <td><input type='text' class='no-border-input' form='editMemberForm' name='HP-".$row['memberID']."' value=".$row['memberHP']." disabled></td>
+                                                <td><input type='text' class='no-border-input' form='editMemberForm' name='memberUsername-".$row['memberID']."' value='".$row['memberUsername']."' disabled></td>
+                                                <td><input type='text' class='no-border-input' form='editMemberForm' name='memberPassword-".$row['memberID']."' value='".$row['memberPassword']."' disabled></td>
+                                                <td><input type='text' class='no-border-input' form='editMemberForm' name='name-".$row['memberID']."' value='".$row['memberName']."' disabled></td>
+                                                <td>
+                                                    <select class='no-border-input' form='editMemberForm' name='gender-".$row['memberID']."' disabled>
+                                                        <option value='male' "; if($row['memberGender'] == 'male') {echo "selected";} echo ">Male</option>
+                                                        <option value='female' "; if($row['memberGender'] == 'female') {echo "selected";} echo">Female</option>
+                                                        <option value='other' "; if($row['memberGender'] == 'other') {echo "selected";} echo ">Other</option>
+                                                    </select>
+                                                </td>
+                                                <td><input type='text' class='no-border-input' form='editMemberForm' name='address-".$row['memberID']."' value='".$row['memberAddress']."' disabled></td>
+                                                <td><input type='email' class='no-border-input' form='editMemberForm' name='email-".$row['memberID']."' value='".$row['memberEmail']."' disabled></td>
+                                                <td><input type='text' class='no-border-input' form='editMemberForm' name='HP-".$row['memberID']."' value='".$row['memberHP']."' disabled></td>
                                                 <td class='action-btn-group'>
-                                                    <button class='edit-btn' onclick="."editMember(".$row['memberID'].")>Edit</button>
+                                                    <button class='edit-btn' onclick="."editMember('member-".$row['memberID']."',".$row['memberID'].")>Edit</button>
                                                     <button class='del-btn' type='submit' name='del-btn' form='delMemberForm' value=".$row['memberID'].">Delete</button>
                                                 </td>
                                             </tr>";
@@ -205,17 +223,23 @@
                             $result = mysqli_query($link, $query);
                             if($result->num_rows > 0){
                                 while($row = $result->fetch_assoc()){
-                                    echo "  <tr id=".$row['memberID'].">
+                                    echo "  <tr id='member-".$row['memberID']."'>
                                                 <td>".$row['memberID']."</td>
-                                                <td><input type='text' class='no-border-input' form='editMemberForm' name='memberUsername-".$row['memberID']."' value=".$row['memberUsername']." disabled></td>
-                                                <td><input type='text' class='no-border-input' form='editMemberForm' name='memberPassword-".$row['memberID']."' value=".$row['memberPassword']." disabled></td>
-                                                <td><input type='text' class='no-border-input' form='editMemberForm' name='name-".$row['memberID']."' value=".$row['memberName']." disabled></td>
-                                                <td><input type='text' class='no-border-input' form='editMemberForm' name='gender-".$row['memberID']."' value=".$row['memberGender']." disabled></td>
-                                                <td><input type='text' class='no-border-input' form='editMemberForm' name='address-".$row['memberID']."' value=".$row['memberAddress']." disabled></td>
-                                                <td><input type='email' class='no-border-input' form='editMemberForm' name='email-".$row['memberID']."' value=".$row['memberEmail']." disabled></td>
-                                                <td><input type='text' class='no-border-input' form='editMemberForm' name='HP-".$row['memberID']."' value=".$row['memberHP']." disabled></td>
+                                                <td><input type='text' class='no-border-input' form='editMemberForm' name='memberUsername-".$row['memberID']."' value='".$row['memberUsername']."' disabled></td>
+                                                <td><input type='text' class='no-border-input' form='editMemberForm' name='memberPassword-".$row['memberID']."' value='".$row['memberPassword']."' disabled></td>
+                                                <td><input type='text' class='no-border-input' form='editMemberForm' name='name-".$row['memberID']."' value='".$row['memberName']."' disabled></td>
+                                                <td>
+                                                    <select class='no-border-input' form='editMemberForm' name='gender-".$row['memberID']."' disabled>
+                                                        <option value='male' "; if($row['memberGender'] == 'male') {echo "selected";} echo ">Male</option>
+                                                        <option value='female' "; if($row['memberGender'] == 'female') {echo "selected";} echo">Female</option>
+                                                        <option value='other' "; if($row['memberGender'] == 'other') {echo "selected";} echo ">Other</option>
+                                                    </select>
+                                                </td>
+                                                <td><input type='text' class='no-border-input' form='editMemberForm' name='address-".$row['memberID']."' value='".$row['memberAddress']."' disabled></td>
+                                                <td><input type='email' class='no-border-input' form='editMemberForm' name='email-".$row['memberID']."' value='".$row['memberEmail']."' disabled></td>
+                                                <td><input type='text' class='no-border-input' form='editMemberForm' name='HP-".$row['memberID']."' value='".$row['memberHP']."' disabled></td>
                                                 <td class='action-btn-group'>
-                                                    <button class='edit-btn' onclick="."editMember(".$row['memberID'].")>Edit</button>
+                                                    <button class='edit-btn' onclick="."editMember('member-".$row['memberID']."',".$row['memberID'].")>Edit</button>
                                                     <button class='del-btn' type='submit' name='del-btn' form='delMemberForm' value=".$row['memberID'].">Delete</button>
                                                 </td>
                                             </tr>";

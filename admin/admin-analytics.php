@@ -6,7 +6,7 @@
     $customerCount = mysqli_num_rows($result);
 
 
-    $query = "SELECT * FROM booking";
+    $query = "SELECT * FROM booking WHERE bookingStatus = 'completed'";
     $result = mysqli_query($link, $query);
     $carSold = mysqli_num_rows($result);
 

@@ -57,6 +57,10 @@ form.addEventListener('submit', (e) => {
         handleError(password, "Please set your password");
         e.preventDefault();
     }
+    else if(password.value.length!= 6 ){
+        handleError(password, "Password must be 6 character long");
+        e.preventDefault();
+    }
     else if(!(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s)/.test(password.value))){
         handleError(password, "Password MUST contains AT LEAST 1 SMALL LETTER, 1 CAPITAL LETTER, 1 SYMBOL AND 1 NUMBER");
         e.preventDefault();
