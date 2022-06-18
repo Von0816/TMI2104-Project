@@ -5,10 +5,9 @@
     $result = mysqli_query($link, $query);
     $customerCount = mysqli_num_rows($result);
 
-    $mth = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
     $mthlySales = array();
-    for($i = 0; $i < count($mth); $i++){
-        $query = "SELECT * FROM booking WHERE bookingStatus = 'completed' AND (EXTRACT(MONTH FROM bookingDate) = $mth[$i])";
+    for($i = 1; $i <= 12; $i++){
+        $query = "SELECT * FROM booking WHERE bookingStatus = 'completed' AND (EXTRACT(MONTH FROM bookingDate) = $i)";
         $result = mysqli_query($link, $query);
         array_push($mthlySales, mysqli_num_rows($result));
     }
