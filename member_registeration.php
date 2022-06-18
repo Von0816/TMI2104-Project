@@ -4,6 +4,7 @@
   <head>
 	  <title>Member Registeration</title>
     <link rel="stylesheet" type="text/css" href="member_registeration.css">
+	  <script src="member_registeration.js"></script>
 
 </head>
 <body>
