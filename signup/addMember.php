@@ -16,18 +16,12 @@
   
     $sql = "INSERT INTO member(memberUsername, memberName, memberAddress, memberEmail, memberHP, memberPassword) VALUES ('$memberUsername','$memberName', '$memberAddress', '$memberEmail', '$memberHP', '$memberPassword')";
 
-      $_SESSION['memberUsername'] = $memberUsername;
-      $_SESSION['memberName'] = $memberName;
-      $_SESSION['memberGender'] = $memberGender;
-      $_SESSION['memberAddress'] = $memberAddress;
-      $_SESSION['memberEmail'] = $memberEmail;
-      $_SESSION['memberHP'] = $memberHP;
-      $_SESSION['memberPassword'] = $memberPassword;
-
     if(mysqli_query($link, $sql)){
+      echo "<script>alert('Account Created')</script>";
       echo "<script>location.href='index.php';</script>";
     }else{
-        echo "Error" . mysqli_error($link);
+      echo "<script>alert('".mysqli_error($link)."')</script>";
+      echo "<script type='text/javascript'>window.location.href = '../index.php'</script>";
     }
   }    
 

@@ -1,7 +1,7 @@
 
 window.addEventListener('load', () => {
     console.log("js loaded");
-    const form = document.getElementById("form");
+    const form = document.getElementById("signup-form");
     const username = document.getElementById("username");
     const name = document.getElementById("name");
     const email = document.getElementById("email");
@@ -22,7 +22,6 @@ window.addEventListener('load', () => {
     })
 
     username.addEventListener('input', (e) => {
-        console.log("Validating username");
         const usernameVal = username.value;
         if(usernameVal.trim() === ''){
             setError(username, "Please set your username");
@@ -38,7 +37,6 @@ window.addEventListener('load', () => {
     })
 
     username.addEventListener('blur', (e) => {
-        console.log("Validating username");
         const usernameVal = username.value;
         if(usernameVal.trim() === ''){
             setError(username, "Please set your username");
@@ -54,7 +52,6 @@ window.addEventListener('load', () => {
     })
 
     name.addEventListener('input', (e) => {
-        console.log("Validating name");
         const nameVal = name.value;
         if(nameVal.trim() === ''){
             setError(name, "Please enter your full name");
@@ -70,7 +67,6 @@ window.addEventListener('load', () => {
     })
 
     name.addEventListener('blur', (e) => {
-        console.log("Validating name");
         const nameVal = name.value;
         if(nameVal.trim() === ''){
             setError(name, "Please enter your full name");
@@ -86,7 +82,6 @@ window.addEventListener('load', () => {
     })
     
     email.addEventListener('input', (e) => {
-        console.log("Validating email");
         const emailVal = email.value;
         if(emailVal.trim() === ''){
             setError(email, "Please enter your email");
@@ -102,7 +97,6 @@ window.addEventListener('load', () => {
     })
 
     email.addEventListener('blur', (e) => {
-        console.log("Validating email");
         const emailVal = email.value;
         if(emailVal.trim() === ''){
             setError(email, "Please enter your email");
@@ -118,7 +112,6 @@ window.addEventListener('load', () => {
     })
 
     address.addEventListener('input', (e) => {
-        console.log("Validating address");
         const addressVal = address.value;
         if(addressVal.trim() === ''){
             setError(address, "Please enter your address");
@@ -130,7 +123,6 @@ window.addEventListener('load', () => {
     })
 
     address.addEventListener('blur', (e) => {
-        console.log("Validating address");
         const addressVal = address.value;
         if(addressVal.trim() === ''){
             setError(address, "Please enter your address");
@@ -143,7 +135,6 @@ window.addEventListener('load', () => {
     
 
     hp.addEventListener('input', (e) => {
-        console.log("Validating hp");
         const hpVal = hp.value;
         if(hpVal.trim() === ''){
             setError(hp, "Please enter your phone number");
@@ -159,7 +150,6 @@ window.addEventListener('load', () => {
     })
 
     hp.addEventListener('blur', (e) => {
-        console.log("Validating hp");
         const hpVal = hp.value;
         if(hpVal.trim() === ''){
             setError(hp, "Please enter your phone number");
@@ -176,7 +166,6 @@ window.addEventListener('load', () => {
 
 
     password.addEventListener('input', (e) => {
-        console.log("Validating password");
         const passwordVal = password.value;
         if(passwordVal.trim() === ''){
             setError(password, "Please set your password");
@@ -187,8 +176,7 @@ window.addEventListener('load', () => {
             e.preventDefault();
         }
         else if(passwordVal.length != 6){
-            setError(password, "Password must be exactly 6 character long")
-            console.log(passwordVal.length);
+            setError(password, "Password must be exactly 6 character long");
         }
         else {
             setValid(password);
@@ -196,7 +184,6 @@ window.addEventListener('load', () => {
     })
 
     password.addEventListener('blur', (e) => {
-        console.log("Validating password");
         const passwordVal = password.value;
         if(passwordVal.trim() === ''){
             setError(password, "Please set your password");
@@ -207,18 +194,113 @@ window.addEventListener('load', () => {
             e.preventDefault();
         }
         else if(passwordVal.length != 6){
-            setError(password, "Password must be exactly 6 character long")
-            console.log(passwordVal.length);
+            setError(password, "Password must be exactly 6 character long");
         }
         else {
             setValid(password);
         }
     })
 
+    form.addEventListener('submit', (e) => {
+        const error = form.getElementsByClassName("error");
+        if(!validate()){
+            e.preventDefault()
+        }
+    })
+
     
     /*--------------------------------------------------------------------------------------------------*/
+    function validate() {
+        const usernameVal = username.value;
+        const nameVal = name.value;
+        const emailVal = email.value;
+        const addressVal = address.value;
+        const hpVal = hp.value;
+        const passwordVal = password.value;
+        let hasError = false;
+
+        if(usernameVal.trim() === ''){
+            setError(username, "Please set your username");
+            hasError = true;
+        }
+        else if(!(/^[a-zA-Z]*$/.test(usernameVal))){
+            setError(username, "Username must only contains letter");
+            hasError = true;
+        }
+        else {
+            setValid(username);
+        }
+
+        if(nameVal.trim() === ''){
+            setError(name, "Please enter your full name");
+            hasError = true;
+        }
+        else if(!(/^[a-zA-Z\s]*$/.test(nameVal))){
+            setError(name, "Name must only contains letter");
+            hasError = true;
+        }
+        else {
+            setValid(name);
+        }
+
+        if(emailVal.trim() === ''){
+            setError(email, "Please enter your email");
+            hasError = true;
+        }
+        else if(!(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(emailVal))){
+            setError(email, "Please enter a valid email");
+            hasError = true;
+        }
+        else {
+            setValid(email);
+        }
+
+        if(addressVal.trim() === ''){
+            setError(address, "Please enter your address");
+            hasError = true;
+        }
+        else {
+            setValid(address);
+        }
+
+        if(hpVal.trim() === ''){
+            setError(hp, "Please enter your phone number");
+            hasError = true;
+        }
+        else if(!(/^\+(\d{2})(\d{1,13}$)/.test(hpVal))){
+            setError(hp, "Please enter a valid phone number");
+            hasError = true;
+        }
+        else {
+            setValid(hp);
+        }
+
+        if(passwordVal.trim() === ''){
+            setError(password, "Please set your password");
+        }
+        else if(!(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s)/.test(passwordVal))){
+            setError(password, "Password must contains ONE UPPER CASE, ONE LOWER CASE, ONE NUMBER AND ONE SPECIAL CHARACTER");
+            hasError = true;
+        }
+        else if(passwordVal.length != 6){
+            setError(password, "Password must be exactly 6 character long");
+            hasError = true;
+        }
+        else {
+            setValid(password);
+        }
+
+
+        if(hasError === false){
+            return true;
+        }
+        else {
+            return false
+        }
+    }
+
+
     function setError(input, errorMsg){
-        console.log("Setting error");
         const formEl = input.parentElement;
         const small = formEl.getElementsByTagName("small");
 

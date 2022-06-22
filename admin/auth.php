@@ -5,7 +5,7 @@
             echo "<script type='text/javascript'>window.location.href = '../index.php'</script>";
         }
     } else {
-            echo "<script>alert('Please log in')</script>";
+            echo "<script>alert('Unauthorized User')</script>";
             echo "<script type='text/javascript'>window.location.href = '../index.php'</script>";
     }
 ?>
