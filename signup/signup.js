@@ -316,9 +316,13 @@ window.addEventListener('load', () => {
 
     function setValid(input){
         const formEl = input.parentElement;
+        const small = formEl.getElementsByTagName("small");
         if(formEl.classList.contains("error")){
             formEl.classList.remove("error");
         }
         formEl.classList.add("valid");
+        for(let i in small){
+            small[i].innerText = "";
+        }
     }
 })
