@@ -22,24 +22,30 @@ input:focus {
     outline: none;
 }
 
-#form {
+#box {
     margin: auto;
     display: flex;
     flex-flow: column;
     justify-content: flex-start;
-    gap: .5em;
+    gap: .5rem;
     background-color: #EEEEEE;
-    padding: 1em 5em 2em 5em;
+    padding: 1rem 5rem 2rem 5rem;
     border-radius: 10px;
 }
 
-#form a {
+#box a {
     font-size: .8em;
 }
 
-#form img {
-    width: 10em;
+#box img {
+    width: 10rem;
     margin: auto;
+}
+
+#signup-form{
+    display: flex;
+    flex-flow: column;
+    gap: .5em;
 }
 
 .form-el {
@@ -56,6 +62,8 @@ input:focus {
 
 .form-el small {
     visibility: hidden;
+    max-width: 20em;
+    text-align: justify;
 }
 
 .error input {
@@ -74,7 +82,8 @@ input:focus {
 #pswVis {
     visibility: visible;
     cursor: pointer;
-    margin-left: auto;
+    margin: 0 0 0 auto;
+    font-size: .8em;
 }
 
 #submit {

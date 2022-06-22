@@ -21,7 +21,7 @@
                     if($result->num_rows > 0){
                         while($row = $result->fetch_assoc()){
                             echo    "<a class='card' id=".$row['carID']." href='car.php' method='GET' value=".$row['carID'].">
-                                        <img src='".$row['carImgPath']."'>
+                                        <img src='".$row['carPic']."'>
                                         <div class='details'>
                                             <h3>".$row['carName']."</h3>
                                             <p>".$row['carFuel']." | ".$row['carGearBox']." | ".$row['carBHP']."</p>
