@@ -290,7 +290,7 @@
                 <input type="submit" value="Login" class="btn btn-success" >
                 <input type="btn" onclick="document.getElementById('loginID').style.display='none'" value="Cancel" class="btn btn-danger">
 
-                <br><br>New member? Create new account <a href="member-signup.php" id="signup-link">here</a>
+                <br><br>New member? Create new account <a href="/signup/signup.html" id="signup-link">here</a>
             </div>
         </form>
     </div>
