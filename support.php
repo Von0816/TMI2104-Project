@@ -3,12 +3,21 @@
 <html>
     <head>
         <title>Support</title>
-        <link rel="stylesheet" href="support.css">
-        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="css/support.css">
+        <link rel="stylesheet" href="css/main.css">
 		<link rel="icon" type="image/x-icon" href="img/logo2.png">
         <script src="support.js"></script>
-		<script src="index.js"></script>
-      
+
+	<style>
+		.bg-img {
+			background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), url("img/contact us bg photo.jpg");
+			height: 100%;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			position: relative;
+		}
+	</style>
     </head>
     <body id="body">
 		<!--nav bar-->

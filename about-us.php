@@ -3,13 +3,25 @@
 <html>
     <head>
         <title>About Us</title>
-        <link rel="stylesheet" href="about-us.css">
-        <link rel="stylesheet" href="main.css">
-	<link rel="icon" type="image/x-icon" href="img/logo2.png">
+        <link rel="stylesheet" href="css/about-us.css">
+        <link rel="stylesheet" href="css/main.css">
+		<link rel="icon" type="image/x-icon" href="img/logo2.png">
         <script src="about-us.js"></script>
-        <script src="main.js"></script>
+		<script src="index.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<style>
+			.top-image {
+				background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), url("img/lingscars team.jpg");
+				height: 70%;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				position: relative;
+			}
+		</style>
     </head>
+
     <body id="body">
 		<!--nav bar-->
         <?php include("navBarIndex.php"); ?>

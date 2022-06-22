@@ -3,11 +3,31 @@
 <html>
     <head>
         <title>LINGsCARS</title>
-        <link rel="stylesheet" href="main.css">
-        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/index.css">
+		<link rel="stylesheet" href="css/addtocart.css">
         <link rel="icon" type="image/x-icon" href="img/logo2.png">
-        
+        <script src="addtocart.js"></script>
+        <script>
+            if ( window.history.replaceState ) {
+            window.history.replaceState( null, null, window.location.href );
+            }
+        </script>
+		
+       
+        <script>
+            if ( window.history.replaceState ) {
+				window.history.replaceState( null, null, window.location.href );
+            }
+        </script>
 
+        <style>
+            .custReview{
+                background: linear-gradient(to bottom right, rgba(34, 28, 54, 0.7), rgba(29, 28, 54, 0.7)), url("img/happy.jpg") top center no-repeat;
+                background-size: cover;
+                height: 100%;
+            }
+        </style>
     </head>
     <body id="body">
         <!--nav bar-->
@@ -46,48 +66,48 @@
             <div class="cars">
                 <div class="carDetails">      
                     <div class="car">
-                        <a target="_blank" href="audi-a3.php">
+                        <a href="audi-a3.php">
                             <img src="img/audi_1.jpg" alt="audi">
                             <div class="details">
-                                <h3>Audi A3 Sportback</h3>
-                                <p>30 TFSI S line (110bhp) Hatchback | 5dr Petrol Manual | Brand New </p>
-                                <h4>£384/month<sup>*including VAT</sup></h4>
+                                <h3>Audi A3 Sportback 30 TFSI</h3>
+                                <p>Petrol | Manual | 110BHP </p>
+                                <h4>£357.5/month<sup>*including VAT</sup></h4><br>
                             </div>
                         </a>
                     </div>
                 </div>
                 <div class="carDetails">
                   <div class="car">
-                      <a target="_blank" href="hyundai-tucson.php">
+                      <a href="hyundai-tucson.php">
                           <img src="img/hyundai_1.jpg" alt="hyundai" >
                           <div class="details">
-                              <h3>Hyundai Tucson</h3>
-                              <p>1.6 TGDi 2WD SE Connect (150bhp) Estate | 5dr Petrol Manual | Brand New </p>
-                              <h4>£323/month<sup>*including VAT</sup></h4>
+                              <h3>Hyundai Tucson 1.6 TGDi 2WD</h3>
+                              <p>Petrol | Manual | 150BHP </p>
+                              <h4>£249.53/month<sup>*including VAT</sup></h4><br>
                           </div>
                       </a>
                   </div>
               </div>
                 <div class="carDetails">
                   <div class="car">
-                      <a target="_blank" href="nissan-micra.php">
+                      <a href="nissan-micra.php">
                           <img src="img/nissan_1.jpg" alt="nissan">
                           <div class="details">
-                              <h3>Nissan Micra</h3>
-                              <p>1.0 IG-T N-Sport (92bhp) Hatchback | 5dr Petrol Manual | Brand New </p>
-                              <h4>£243/month<sup>*including VAT</sup></h4>
+                              <h3>Nissan Micra 1.0 IG-T</h3>
+                              <p>Petrol | Manual | 92BHP </p>
+                              <h4>£361.12/month<sup>*including VAT</sup></h4><br>
                           </div>
                       </a>
                   </div>
               </div>
               <div class="carDetails">
                 <div class="car">
-                    <a href="#">
+                    <a href="#feaCar">
                         <img src="img/volvo.jpg" alt="volvo">
                         <div class="details">
-                            <h3>Volvo V60 Estate</h3>
-                            <p>2.0 B3P Momentum (163bhp) Estate | Automatic | Brand New <br></p>
-                            <h4>£438/month <sup>*including VAT</sup></h4>
+                            <h3>Volvo V60 Estate 2.0 B3P</h3>
+                            <p>Petrol | Automatic | 192 BHP  <br></p>
+                            <h4>£438/month <sup>*including VAT</sup></h4><br>
                            
                         </div>
                     </a>
@@ -117,6 +137,19 @@
                 </div>
             </div>
         </section>
+
+          <!--ADD TO CART-->
+        <section id="cart">
+            <div class="header">
+                <h1><i class="fa fa-shopping-cart" style="font-size:36px"></i>&nbsp;&nbsp;ADD TO CART</h1>
+            </div>
+            <div class="cars">
+                <br><br>
+                <?php include("addtocart.php"); ?>
+            </div>
+          
+        </section>
+
 
         <!--FAQ-->
         <section class="faq">

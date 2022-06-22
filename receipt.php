@@ -16,16 +16,18 @@ $num = $query -> num_rows;
         
 if($num==1){
     $_SESSION['bookingID'] = $row['bookingID'];
-    $set = $_SESSION['bookingID'];
+    //$set = $_SESSION['bookingID'];
 }
 
-
+$set = $_SESSION['bookingID'];
 if($set){
 
-	$sql = "SELECT car.carName, car.carBody, car.carGearBox, car.carMonthlyRate
+	$sql = "SELECT car.carName, car.carBody, car.carGearBox, car.carMonthlyRate, payment.billing_email
 		FROM car INNER JOIN booking
-		ON car.carID = booking.carID 
-		WHERE booking.carID = '$set'";
+		ON car.carID = booking.carID
+		INNER JOIN payment
+		WHERE booking.bookingID = '$set'";
+
 
 	$show = mysqli_query($link,$sql);
 	while($rows= mysqli_fetch_array($show)){
@@ -60,7 +62,7 @@ try {
 	$mail->Username    = "lingscars.itik@gmail.com";   // SMTP account username
 	$mail->Password   = "xpfrjamtxpgoayon";        // SMTP account password
 	    
-	$mail->setFrom("lingscars.itik@gmail.com", "LINGsCARs");		
+	$mail->setFrom("lingscars.itik@gmail.com", "LINGsCARs");
 	$mail->addAddress($_SESSION ['email']);
 	$mail->isHTML(true);								
 	$mail->Subject = "Your LINGsCARs E-Receipt";
@@ -89,6 +91,7 @@ try {
 		padding:10px;
 		height:100%;
 		width:570pt;
+		margin: 5%;
 		}
 
 		div.Address{
@@ -117,7 +120,6 @@ try {
 			float:left;
 			text-align:left;
 		}
-
 		</style>
 
 	</head>

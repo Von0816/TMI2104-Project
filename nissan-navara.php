@@ -3,8 +3,8 @@
 <html>
     <head>
         <title>LINGsCARS</title>
-        <link rel="stylesheet" href="main.css">
-        <link rel="stylesheet" href="carInfo.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/carInfo.css">
         <link rel="icon" type="image/x-icon" href="img/logo2.png">
         <script src="index.js"></script>
         
@@ -42,7 +42,7 @@
         <!--FOOTER-->
         <section class="footer">
             <footer class="f">
-                <a href="carInfo.css"><img src="img/lingscars-logo.png"></a>           
+                <a href="css/carInfo.css"><img src="img/lingscars-logo.png"></a>           
                 <p> Company Reg No: 6178634 || VAT No: 866 0241 30 <br>
                     © Copyright 2004 - 2022 LINGsCARS.com. All rights reserved.</p>
             </footer>

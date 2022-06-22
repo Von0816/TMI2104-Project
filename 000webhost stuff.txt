@@ -1,10 +1,2 @@
-FTP
-link: https://files.000webhost.com/
-username: tmi2104-itik
-password: 6DkkIq8b1UDr^sp1DFcZ
-
-DB:
-link: https://databases.000webhost.com/
-DB username: id19127857_itik
+Website password: 6DkkIq8b1UDr^sp1DFcZ
 DB password: ZS_|*9jjkr_JLKsN
-DB name: id19127857_db

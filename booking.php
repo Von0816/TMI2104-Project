@@ -1,7 +1,8 @@
 <?php
 	include("connection.php");
 
-		if(isset($_POST['submit'])){
+    if(isset($_SESSION['username'])){
+        if(isset($_POST['submit'])){
 
             $memID = $cid = $bookDate = $bookTime = $bookStatus = "";
            
@@ -34,16 +35,7 @@
 
             $bookStatus = "pending" ; 
 
-             
-            $sql = "SELECT * FROM booking WHERE memberID = $memID";
-            $query = $link -> query($sql);
-            $row = $query -> fetch_assoc();
-            $num = $query -> num_rows;	
-                    
-            if($num==1){
-                $_SESSION['bookingID'] = $row['bookingID'];
-            }
-
+            
 
 
             $sql = "INSERT INTO booking(memberID, carID, bookingDate, bookingTime, bookingStatus)
@@ -55,14 +47,22 @@
         } 
 
         if(mysqli_query($link, $sql)){
-            echo "<script>alert('Processing your booking..Proceed to checkout..');
-            window.location='checkout.php';</script>";
+            echo '<script type="text/javascript">alert("Processing your booking..Proceed to checkout..");
+            window.location="checkout.php";</script>';
         }
         
         else{
             echo "<script>alert('The booking process is unsuccessful..');
             window.history.back()</script>";
         }
+    }//end if
 
-        
+    
+    else{
+        echo '<script type="text/javascript">alert("You need to log in or register first before making your payment..");
+            window.location="index.php";</script>';
+    }//end else
+
+		
+   
 ?>

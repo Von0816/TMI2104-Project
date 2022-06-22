@@ -2,7 +2,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="navbarIndex.js"></script>
     <style>
         
         /* --------------------------------------NAVIGATION BAR-------------------------------------- */
@@ -35,6 +36,8 @@
             text-decoration: none;
             color: white;
             font-size: larger;
+            float: left;
+            cursor: pointer;
         }
 
         #welcometext {
@@ -43,8 +46,8 @@
             font-size: larger;
             position:relative; 
             top:0px; 
-            left:490px; 
-            margin-left:180px; 
+            left:680px; 
+            margin-left:10px; 
             margin-right:0px;
         }
 
@@ -64,8 +67,9 @@
             position:relative; 
             top:0px; 
             left:0px; 
-            margin-left:33%; 
+            margin-left:0px; 
             margin-right:0px;
+          
         }
 
         .nav-list-item button:hover {
@@ -147,8 +151,8 @@
             background-color: #fefefe;
             border: 1px solid #888;
             margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-            width: fit-content; /* Could be more or less, depending on screen size */
-            height: fit-content;
+            width: 48%; /* Could be more or less, depending on screen size */
+            height: 84%;
             padding-top: 50px;
             padding-right: 10px;
             padding-left: 180px;
@@ -203,6 +207,15 @@
         }
         }	
 
+        #profilePhoto {
+            position:relative; 
+            top:0px; 
+            left:680px; 
+            margin-left:10px; 
+            margin-right:0px;
+            cursor: pointer;
+        }
+
     </style>
 
 </head>
@@ -211,8 +224,8 @@
     <nav>
         <ul id="nav-list">
             <li class="nav-list-item">
-                <a href="index.php">
-                <img id="nav-logo" src="img/logo.png" alt="logo">
+                <a href="checkNavBarLogo.php">
+                <img id="nav-logo" src="img/logo.png" onclick="imageProfile()" alt="logo">
                 </a>
             </li>
             <li class="nav-list-item">
@@ -225,37 +238,31 @@
                 <a class="button" href="support.php">Support</a>
             </li>
 
+           
+
+            <li class="nav-list-item">
+                <a class="button" onclick="document.getElementById('loginID').style.display='block'" class = "btn">Login</a>
+            </li>
+
+            <li class="nav-list-item">
+                <a class="button" onclick="myLogOutFunction()" class = "btn">Logout</a>
+            </li>
+
             <li>
-                <a id="welcomeText" class="align-self-end">
+                <a href="userDashboard.php"><img alt="profile-logo" id="profilePhoto" src="img/profilelogo.png" style="width:40px;height:40px;"</a>
+            </li>
+
+            <li>
+                <a class = "align-self-end" id="welcomeText" >
                     <?php 
                     if (isset($_SESSION['username'])){
                         echo "Welcome, ", $_SESSION['username']; 
                     }
                     else{
-                        echo "Welcome, guest...";
+                        echo "Welcome, user...";
                     }?>
                 </a>
             </li>
-            <?php
-                if(isset($_SESSION['accLevel'])){
-                    if($_SESSION['accLevel'] == 'admin'){
-                        echo "<li class='nav-list-item'>";
-                        echo "<a class='button' href='indexAdmin.php'>Dashboard</a>";
-                        echo "</li>";
-                    }
-                }
-                if(!(isset($_SESSION['username']))){
-                    echo "<li class='nav-list-item loginButton align-self-end'>";
-                    echo "<button onclick="."document.getElementById('loginID').style.display='block'"." class = 'btn'>Login</button>";
-                    echo "</li>";
-                }
-                else {
-                    echo "<li class='nav-list-item align-self-end'>
-                            <button onclick='myLogOutFunction()' class = 'btn'>Logout</button>
-                        </li>";
-                }
-            ?>
-
 
         </ul>
     </nav>
@@ -283,7 +290,7 @@
                 <input type="submit" value="Login" class="btn btn-success" >
                 <input type="btn" onclick="document.getElementById('loginID').style.display='none'" value="Cancel" class="btn btn-danger">
 
-                <br><br>New member? Create new account <a href="signup.html" id="signup-link">here</a>
+                <br><br>New member? Create new account <a href="member-signup.php" id="signup-link">here</a>
             </div>
         </form>
     </div>

@@ -5,8 +5,8 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-<link rel="stylesheet" href="main.css">
-<link rel="stylesheet" href="checkout.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/checkout.css">
 <script src="index.js"></script>
 </head>
     <body id="body">   

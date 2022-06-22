@@ -167,7 +167,7 @@ function validateEmail(email){
 }
 
 function editAdmin(rowID, adminID){
-    const row = document.getElementById(rwoID);
+    const row = document.getElementById(rowID);
     const col = row.getElementsByTagName("td");
     const oldBtn = [];
     const newBtn = [document.createElement("button"), document.createElement("button")]

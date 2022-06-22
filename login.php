@@ -1,6 +1,7 @@
 <?php
 	include("connection.php");
 		if(isset($_POST['username'])){
+            
             $sql = "SELECT * FROM admin WHERE adminUsername = '".$_POST['username']."' AND adminPassword = '".$_POST['password']."'";
             $query = $link -> query($sql);
             $row = $query -> fetch_assoc();
@@ -14,7 +15,7 @@
                 if(isset($_SESSION['username'])){
                     //echo "Sucessfully logged in as admin..Welcome". $_SESSION['username'];
                     
-                    echo "<script>alert('Sucessfully logged in as admin. Welcome!!'); window.location='indexAdmin.php';</script>";
+                    echo "<script>alert('Sucessfully logged in as admin. Welcome!!'); window.location='admin/admin-analytics.php';</script>";
                     
                 }
                 

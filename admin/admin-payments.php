@@ -1,4 +1,7 @@
-<?php include("../connection.php") ?>
+<?php 
+    include("../connection.php"); 
+    include("auth.php");
+?>
 
 <!DOCTYPE html>
     <head>

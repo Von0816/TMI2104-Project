@@ -14,6 +14,7 @@
         $carPaint =filterInput($_POST["paint-$carID"]);
         $carTerm = filterInput($_POST["term-$carID"]);
         $carMonthlyRate = filterInput($_POST["rate-$carID"]);
+        $carImgPath = filterInput($_POST["imgPath-$carID"]);
 
         if(empty($carID)){
             $error .= "Car cannot be blank\\n";
@@ -54,6 +55,9 @@
         else if(!preg_match("/^[0-9\.0-9]*$/", $carMonthlyRate)){
             $error .= "Car monthly rate must be in decimals\\n";
         }
+        if(empty($carImgPath)){
+            $error .= "Please enter car image path";
+        }
 
 
         if(empty($error)){
@@ -66,7 +70,8 @@
                         carGearBox = '$carGearBox',
                         carPaint = '$carPaint',
                         carTerm = '$carTerm',
-                        carMonthlyRate = '$carMonthlyRate'
+                        carMonthlyRate = '$carMonthlyRate',
+                        carImgPath = '$carImgPath'
                     WHERE carID = $carID";
             $result = mysqli_query($link, $sql);
             if($result){
@@ -74,7 +79,7 @@
                 echo "<script type='text/javascript'>window.location.replace('../admin-cars.php')</script>";
             }
             else {
-                echo "<script type='text/javascript'>alert('Failed')</script>";
+            echo "<script type='text/javascript'>alert('".mysqli_error($link)."')</script>";
                 echo "<script type='text/javascript'>window.location.replace('../admin-cars.php')</script>";
             }
         }

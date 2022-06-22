@@ -1,5 +1,6 @@
 <?php
-    include("../connection.php");
+    include("../connection.php"); 
+    include("auth.php");
 
     $query = "SELECT * FROM member";
     $result = mysqli_query($link, $query);

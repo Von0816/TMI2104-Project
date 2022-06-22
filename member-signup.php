@@ -3,7 +3,7 @@
 <html>
   <head>
 	  <title>Member Registeration</title>
-    <link rel="stylesheet" type="text/css" href="member_registeration.css">
+    <link rel="stylesheet" type="text/css" href="css/member_registeration.css">
     <script src="member-signup.js" defer></script>
 
 </head>

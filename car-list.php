@@ -3,10 +3,8 @@
 <html>
     <head>
         <title>Car List</title>
-        <link rel="stylesheet" href="car-list.css">
-        <link rel="stylesheet" href="main.css">
-        <script src="car-list.js"></script>
-        <script src="main.js"></script>
+        <link rel="stylesheet" href="css/car-list.css">
+        <link rel="stylesheet" href="css/main.css">
     </head>
     <body id="body">
 
@@ -16,50 +14,26 @@
         <!-- ------------------------------------------------------------------------------------------------------------- -->
         <div class="content">
             <h1>Cars</h1>
-<!-- 
-            <div id="filter">
-                <form action="" id="filter-form">
-                   <div class="dropdown">
-                        <button id="brand-button" type="button">Brand</button>
-                        <div class="dropdown-menu" id="brand-dropdown">
-                        <p>test</p> 
-                        </div>
-                    </div>
-                   <div class="dropdown">
-                        <button id="trans-button" type="button">Transmission</button>
-                        <div class="dropdown-menu" id="trans-dropdown">
-
-                        </div>
-                    </div>
-                    <div>
-                        <button type="submit" id="filter-button">Filter</button>
-                    </div>
-                </form>
-            </div> -->
             <div id="car-grid">
-                <script>
-                    <?php
-                        $sql = "SELECT * FROM cars";
-                        $result = $conn->query($sql);
-                        if($result->num_rows>0){
-                            while($row = $result->fetch_assoc()){
-                                echo "<a class='card' id=".$row['carID']." href=''>
-                                        <img src='imgpathname' alt=''>
-                                                <div class='details'>
-                                                <h3>".$row['carName']."</h3>
-                                                <p>".$row['carFuel']." | ".$row['carGearBox']." | ".$row['carBHP']."BHP</p>
-                                                <div class='price'>
-                                                    <h4>Starting At: </h4>
-                                                    <h4>".$row['carMonthlyRate']."/month<sup>*including VAT</sup></h4>
-                                                </div>
+                <?php 
+                    $sql = "SELECT * FROM car";
+                    $result = mysqli_query($link, $sql);
+                    if($result->num_rows > 0){
+                        while($row = $result->fetch_assoc()){
+                            echo    "<a class='card' id=".$row['carID']." href='car.php' method='GET' value=".$row['carID'].">
+                                        <img src='".$row['carImgPath']."'>
+                                        <div class='details'>
+                                            <h3>".$row['carName']."</h3>
+                                            <p>".$row['carFuel']." | ".$row['carGearBox']." | ".$row['carBHP']."</p>
+                                            <div class='price'>
+                                                <h4>Starting At: </h4>
+                                                <h4>£".$row['carMonthlyRate']."/month<sup>*including VAT</sup></h4>
                                             </div>
-                                        </a>";
-                            }
+                                        </div>
+                                    </a>";
                         }
-                        
-                    
-                    ?>
-                </script>
+                    }
+                ?>
             </div>
         </div>
         <!--FOOTER-->
