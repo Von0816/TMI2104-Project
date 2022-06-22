@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="signup.css">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+        </style> 
+        <script src="signup.js"></script>
+    </head>
+    <body>
+       <div id="form">
+            <img src="/img/logo.png" alt="">
+            <h1>Sign up</h1>
+            <form action="addMember.php" method="POST">
+                <div class="form-el">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" placeholder="Itik">
+                    <small class="errorMsg">Error Message</small>
+                </div>
+                <div class="form-el">
+                    <label for="name">Full name</label>
+                    <input type="text" name="name" id="name" placeholder="Itik Coding">
+                    <small class="errorMsg">Error Message</small>
+                </div>
+                <div class="form-el">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="itik@itikcoding.com">
+                    <small class="errorMsg">Error Message</small>
+                </div>
+                <div class="form-el">
+                    <label for="hp">Phone number</label>
+                    <input type="tel" name="hp" id="hp" placeholder="+440123456789">
+                    <small class="errorMsg">Error Message</small>
+                </div>
+                <div class="form-el">
+                    <div>
+                        <label for="password">Password</label>
+                        <small id="pswVis">Show</small>
+                    </div>
+                    <input type="password" name="password" id="password">
+                    <small class="errorMsg">Error Message</small>
+                </div>
+                <div class="form-el">
+                    <label for="cPassword">Confirm Password</label>
+                    <input type="password" name="cPassword" id="cPassword">
+                    <small class="errorMsg">Error Message</small>
+                </div>
+                <div class="form-el">
+                    <button type="submit" name="submit" id="submit">Sign Up</button>
+                </div>
+            </form>
+            <a href="../index.php">return to main page</a>
+       </div> 
+    </body>
+</html>
