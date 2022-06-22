@@ -1,6 +1,6 @@
 <?php
 
-  include "connection.php";
+  include "../connection.php";
 
   $memberUsername=$memberName=$memberGender=$memberAddress=$memberEmail=$memberHP=$memberPassword=$memberPassword="";;
  
