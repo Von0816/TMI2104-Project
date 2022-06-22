@@ -45,11 +45,36 @@
                       <label for="ccnum">Credit card number</label>
                       <input type="text" id="cardnumber" name="cardnumber" placeholder="1111-2222-3333-4444"/>
                       <label for="expmonth">Exp Month</label>
-                      <input type="text" id="expmonth" name="expmonth" placeholder="January"/>
+                      <!--input type="text" id="expmonth" name="expmonth" placeholder="January"/-->
+                      <select id="expmonth" name="expmonth">
+                          <option value="January">January</option>
+                          <option value="February">February</option>
+                          <option value="March">March</option>
+                          <option value="April">April</option>
+                          <option value="May">May</option>
+                          <option value="June">June</option>
+                          <option value="July">July</option>
+                          <option value="August">August</option>
+                          <option value="September">September</option>
+                          <option value="Octoner">Octoner</option>
+                          <option value="November">November</option>
+                          <option value="December">December</option>
+                      </select>
                       <div class="row">
                         <div class="col-1">
                           <label for="expyear">Exp Year</label>
-                          <input type="text" id="expyear" name="expyear" placeholder="2022" />
+                          <!--input type="text" id="expyear" name="expyear" placeholder="2022" /-->
+                          <select id="expyear" name="expyear">
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                            <option value="2026">2026</option>
+                            <option value="2027">2027</option>
+                            <option value="2028">2028</option>
+                            <option value="2029">2029</option>
+                            <option value="2030">2030</option>
+                        </select>
                         </div>
                         <div class="col-2">
                           <label for="cvv">CVV</label>
