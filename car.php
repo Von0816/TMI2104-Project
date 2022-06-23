@@ -27,7 +27,7 @@
                     <h4>£<?php echo $car['carMonthlyRate']; ?>/mth including VAT</h4>
                     
                     <form action="booking.php" name="carForm" method="post">
-                        <input type="hidden" id ="carType" name="carType" vaLue=<?php echo $car['carID'] ?>/>
+                        <input type="hidden" id ="carType" name="carType" vaLue=<?php echo $car['carID']; ?>/>
                         <a><button type="submit" name = "submit">Book Now </button>
                     </form>
                     
