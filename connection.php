@@ -1,7 +1,7 @@
 <?php
 	define ('servername' , 'localhost');
 	define ('username' , 'root');
-	define ('password' , '');
+	define ('password' , 'bDQ349@tmYkGNq#s');
 	define ('database' , 'db');
 
 	// Create connection

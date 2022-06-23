@@ -20,7 +20,7 @@
                     $result = mysqli_query($link, $sql);
                     if($result->num_rows > 0){
                         while($row = $result->fetch_assoc()){
-                            echo    "<a class='card' id=".$row['carID']." href='car.php' method='GET' value=".$row['carID'].">
+                            echo    "<a class='card' id=".$row['carID']." href='car.php?carID=".$row['carID']."'>
                                         <img src='".$row['carPic']."'>
                                         <div class='details'>
                                             <h3>".$row['carName']."</h3>
