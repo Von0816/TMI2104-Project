@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/index.css">
 		<link rel="stylesheet" href="css/addtocart.css">
+        <link rel="stylesheet" href="css/car-list.css">
         <link rel="icon" type="image/x-icon" href="img/logo2.png">
         <style>
             .custReview{
@@ -58,57 +59,29 @@
                 <h1>FEATURED CARS</h1>
                 <h3>Our best selling car leasing deals!</h3>
                 </div>
-            <div class="cars">
-                <div class="carDetails">      
-                    <div class="car">
-                        <a href="audi-a3.php">
-                            <img src="img/audi_1.jpg" alt="audi">
-                            <div class="details">
-                                <h3>Audi A3 Sportback 30 TFSI</h3>
-                                <p>Petrol | Manual | 110BHP </p>
-                                <h4>£357.5/month<sup>*including VAT</sup></h4><br>
-                            </div>
-                        </a>
+                <div class="content">
+                    <div id="car-grid">
+                        <?php 
+                            $sql = "SELECT * FROM car WHERE carID in (1,4,7)";
+                            $result = mysqli_query($link, $sql);
+                            if($result->num_rows > 0){
+                                while($row = $result->fetch_assoc()){
+                                    echo    "<a class='card' id=".$row['carID']." href='car.php?carID=".$row['carID']."'>
+                                                <img src='img/".$row['carPic']."'>
+                                                <div class='details'>
+                                                    <h3>".$row['carName']."</h3>
+                                                    <p>".$row['carFuel']." | ".$row['carGearBox']." | ".$row['carBHP']."</p>
+                                                    <div class='price'>
+                                                        <h4>Starting At: </h4>
+                                                        <h4>£".$row['carMonthlyRate']."/month<sup>*including VAT</sup></h4>
+                                                    </div>
+                                                </div>
+                                            </a>";
+                                }
+                            }
+                        ?>
                     </div>
                 </div>
-                <div class="carDetails">
-                  <div class="car">
-                      <a href="hyundai-tucson.php">
-                          <img src="img/hyundai_1.jpg" alt="hyundai" >
-                          <div class="details">
-                              <h3>Hyundai Tucson 1.6 TGDi 2WD</h3>
-                              <p>Petrol | Manual | 150BHP </p>
-                              <h4>£249.53/month<sup>*including VAT</sup></h4>
-                          </div>
-                      </a>
-                  </div>
-              </div>
-                <div class="carDetails">
-                  <div class="car">
-                      <a href="nissan-micra.php">
-                          <img src="img/nissan_1.jpg" alt="nissan">
-                          <div class="details">
-                              <h3>Nissan Micra 1.0 IG-T</h3>
-                              <p>Petrol | Manual | 92BHP </p>
-                              <h4>£361.12/month<sup>*including VAT</sup></h4><br>
-                          </div>
-                      </a>
-                  </div>
-              </div>
-              <div class="carDetails">
-                <div class="car">
-                    <a href="#feaCar">
-                        <img src="img/volvo.jpg" alt="volvo">
-                        <div class="details">
-                            <h3>Volvo V60 Estate 2.0 B3P</h3>
-                            <p>Petrol | Automatic | 192 BHP  <br></p>
-                            <h4>£438/month <sup>*including VAT</sup></h4><br>
-                           
-                        </div>
-                    </a>
-                </div>
-            </div>
-            </div>
         </section>
 
         <!--Customer Reviews-->

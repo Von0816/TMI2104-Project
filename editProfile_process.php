@@ -7,13 +7,12 @@ $mID = $_SESSION['userID'];
 if(isset($_POST['update'])){
     $mUserName = $_POST['memberUsername'];
     $mName = $_POST['memberName'];
-    $mGender = $_POST['memberGender'];
     $mAddr = $_POST['memberAddress'];
     $mEmail = $_POST['memberEmail'];
     $mHP = $_POST['memberHP'];
     $mPass = $_POST['memberPassword'];
 
-    $sql = "UPDATE member SET memberUsername = '$mUserName', memberName = '$mName', memberGender = '$mGender', 
+    $sql = "UPDATE member SET memberUsername = '$mUserName', memberName = '$mName',
     memberAddress = '$mAddr', memberEmail = '$mEmail', memberHP = '$mHP', memberPassword = '$mPass'
     WHERE memberID = '$mID'";
 
