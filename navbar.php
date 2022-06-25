@@ -1,10 +1,8 @@
-<?php
-    include("connection.php");
-?>
-
+<!DOCTYPE html>
 <html>
     <head>
         <link rel="stylesheet" href="css/navbar.css">
+        <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');</style> 
         <script src="js/navbar.js"></script>
     </head>
     <body>
@@ -38,7 +36,7 @@
                                         <div id='dropdown-list' class='dropdown-list'>
                                             <p id='dropdown-greet' >Welcome, ".$_SESSION['username']."</p>
                                             <a class='dropdown-item' href='indexAdmin.php' >Dashboard</a>
-                                            <a class='dropdown-item' id='logout-btn'>Logout</a>
+                                            <a class='dropdown-item' id='logout-btn' href='logout.php'>Logout</a>
                                         </div>
                                     </div>
                                 </div>";                       
@@ -50,7 +48,7 @@
                                         <div id='dropdown-list' class='dropdown-list'>
                                             <p id='dropdown-greet' >Welcome, ".$_SESSION['username']."</p>
                                             <a class='dropdown-item' href='userDashboard.php' >Dashboard</a>
-                                            <a class='dropdown-item' id='logout-btn'>Logout</a>
+                                            <a class='dropdown-item' id='logout-btn' href='logout.php'>Logout</a>
                                         </div>
                                     </div>
                                 </div>";        

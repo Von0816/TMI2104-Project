@@ -13,35 +13,56 @@
         <title><?php echo $car['carName']; ?></title>
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/car.css">
+        <style> @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');</style>  
     </head>
     <body>  
-        <?php include("navBarIndex.php"); ?>
+        <?php include("navbar.php"); ?>
 
-        <section class="CarInfo">
-            <div class="row">
-                <div class="col-1">
-                    <h2><?php echo $car['carName']; ?></h2>
-                    <p>Fuel : <?php echo $car['carFuel']; ?></p>
-                    <p>Paint : <?php echo $car['carPaint']; ?></p>
-                    <p>Gearbox : <?php echo $car['carGearBox']; ?></p>
-                    <h4>£<?php echo $car['carMonthlyRate']; ?>/mth including VAT</h4>
-                    
-                    <form action="booking.php" name="carForm" method="post">
-                        <input type="hidden" id ="carType" name="carType" vaLue=<?php echo $car['carID']; ?>/>
-                        <a><button type="submit" name = "submit">Book Now </button>
-                    </form>
-                    
-                    
-                </div>
-                <div class="col-2">
-                    <img src="<?php echo $car['carPic']; ?>" class ="car">
-                    <div class="color-box"></div>
-
-                </div>
+        <section id="car-info">
+            <div id="car-img">
+                <img src="img/<?php echo $car['carPic'] ?>" alt="">
             </div>
-
-        <br><br><br><br>
-                
+            <div id="car-short-info">
+                <h1 id="car-name"><?php echo $car['carName']; ?></h1>
+                <div id="car-rate">
+                    <div id="rate">
+                        <h4>Monthly Rate:</h4>
+                        <p>£<?php echo $car['carMonthlyRate']; ?><sup>*including VAT</sup></p>
+                    </div>
+                </div>
+                <form action="booking.php" name="carForm" method="post">
+                    <input type="hidden" id ="carType" name="carType" value=<?php echo $car['carID']; ?>/>
+                    <button type="submit" name = "submit" id="atc-btn">Book Now </button>
+                </form>
+            </div>
+            <div id="car-specs">
+                <h2>Details Specifications</h2>
+                <table>
+                    <tr>
+                        <th>Body</th>
+                        <td><?php echo $car['carBody'] ?></td>
+                    </tr>                    <tr>
+                        <th>Trim</th>
+                        <td><?php echo $car['carTrim'] ?></td>
+                    </tr>                    <tr>
+                        <th>Fuel</th>
+                        <td><?php echo $car['carFuel'] ?></td>
+                    </tr>                    <tr>
+                        <th>BHP</th>
+                        <td><?php echo $car['carBHP'] ?></td>
+                    </tr>                    <tr>
+                        <th>Gear Box</th>
+                        <td><?php echo $car['carGearBox'] ?></td>
+                    </tr>                    <tr>
+                        <th>Paint</th>
+                        <td><?php echo $car['carPaint'] ?></td>
+                    </tr>                    <tr>
+                        <th>Term</th>
+                        <td><?php echo $car['carTerm'] ?></td>
+                    </tr>
+                </table>
+            </div>
+        </section>
         <!--FOOTER-->
         <section class="footer">
             <footer class="f">

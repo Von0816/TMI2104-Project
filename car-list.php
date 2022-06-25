@@ -1,15 +1,18 @@
 <?php include("connection.php"); ?>
 
+<!DOCTYPE html>
 <html>
     <head>
         <title>Car List</title>
         <link rel="stylesheet" href="css/car-list.css">
         <link rel="stylesheet" href="css/main.css">
+        <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');</style> 
+
     </head>
     <body id="body">
 
         <!--nav bar-->
-        <?php include("navBarIndex.php"); ?>
+        <?php include("navbar.php"); ?>
        
         <!-- ------------------------------------------------------------------------------------------------------------- -->
         <div class="content">
@@ -21,7 +24,7 @@
                     if($result->num_rows > 0){
                         while($row = $result->fetch_assoc()){
                             echo    "<a class='card' id=".$row['carID']." href='car.php?carID=".$row['carID']."'>
-                                        <img src='".$row['carPic']."'>
+                                        <img src='img/".$row['carPic']."'>
                                         <div class='details'>
                                             <h3>".$row['carName']."</h3>
                                             <p>".$row['carFuel']." | ".$row['carGearBox']." | ".$row['carBHP']."</p>

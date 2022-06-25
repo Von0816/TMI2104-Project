@@ -21,7 +21,7 @@
     </head>
     <body id="body">
 		<!--nav bar-->
-		<?php include("navBarIndex.php"); ?>
+		<?php include("navbar.php"); ?>
 		
        
 		<!--content-->

@@ -1,5 +1,5 @@
 <?php
-	include("connection.php");
+	include("../connection.php");
 		if(isset($_POST['username'])){
             
             $sql = "SELECT * FROM admin WHERE adminUsername = '".$_POST['username']."' AND adminPassword = '".$_POST['password']."'";
@@ -15,7 +15,7 @@
                 if(isset($_SESSION['username'])){
                     //echo "Sucessfully logged in as admin..Welcome". $_SESSION['username'];
                     
-                    echo "<script>alert('Sucessfully logged in as admin. Welcome!!'); window.location='admin/admin-analytics.php';</script>";
+                    echo "<script>window.location='../admin/admin-analytics.php';</script>";
                     
                 }
                 
@@ -35,7 +35,7 @@
 
                     if(isset($_SESSION['username'])){
                         //echo "Sucessfully logged in as member..Welcome". $_SESSION['username'];
-                        echo "<script>alert('Sucessfully logged in member. Welcome!!'); window.location='indexMember.php';</script>";
+                        echo "<script>window.location='../indexMember.php';</script>";
                         
                     }
                             

@@ -24,7 +24,7 @@
 
     <body id="body">
 		<!--nav bar-->
-        <?php include("navBarIndex.php"); ?>
+        <?php include("navbar.php"); ?>
         
 		<!--content-->
 		<div class="top-image">

@@ -1,5 +1,6 @@
 <?php include("connection.php"); ?>
 
+<!DOCTYPE html>
 <html>
     <head>
         <title>LINGsCARS</title>
@@ -8,26 +9,19 @@
 		<link rel="stylesheet" href="css/addtocart.css">
         <link rel="stylesheet" href="css/car-list.css">
         <link rel="icon" type="image/x-icon" href="img/logo2.png">
-        <style>
-            .custReview{
-                background: linear-gradient(to bottom right, rgba(34, 28, 54, 0.7), rgba(29, 28, 54, 0.7)), url("img/happy.jpg") top center no-repeat;
-                background-size: cover;
-                height: 100%;
-            }
-        </style>
-		
-       
+        <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');</style>
         <script>
             if ( window.history.replaceState ) {
             window.history.replaceState( null, null, window.location.href );
             }
         </script>
+        <script src="js/index.js" defer></script>
 
 
     </head>
     <body id="body">
         <!--nav bar-->
-        <?php include("navBarIndex.php"); ?>
+        <?php include("navbar.php"); ?>
        
 
         <!--Carousel website-->
@@ -51,7 +45,6 @@
             <span class="dot" onclick="currentSlide(3)"></span>
             </div>
           </section>
-          <script src="index.js"></script>
 
            <!--Best Selling Cars-->
           <section class="feaCar">
