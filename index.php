@@ -6,8 +6,6 @@
         <title>LINGsCARS</title>
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/index.css">
-		<link rel="stylesheet" href="css/addtocart.css">
-        <link rel="stylesheet" href="css/car-list.css">
         <link rel="icon" type="image/x-icon" href="img/logo2.png">
         <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');</style>
         <script>
@@ -19,7 +17,7 @@
 
 
     </head>
-    <body id="body">
+    <body>
         <!--nav bar-->
         <?php include("navbar.php"); ?>
        
@@ -27,54 +25,54 @@
         <!--Carousel website-->
         <section class="carousel">
             <div class="mySlides fade">     
-              <img src="img/1.png" style="width:100%"> 
+                <img src="img/1.png" style="width:100%"> 
             </div>
             <div class="mySlides fade">
-              <img src="img/2.png" style="width:100%">      
+                <img src="img/2.png" style="width:100%">      
             </div>
             <div class="mySlides fade">        
-              <img src="img/3.png" style="width:100%">       
+                <img src="img/3.png" style="width:100%">       
             </div>
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-          </div>
-          <br>
-          <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
             </div>
-          </section>
+            <br>
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </section>
 
-           <!--Best Selling Cars-->
-          <section class="feaCar">
-                <div class="header">
+        <!--Best Selling Cars-->
+        <section class="feaCar">
+            <div class="header">
                 <h1>FEATURED CARS</h1>
                 <h3>Our best selling car leasing deals!</h3>
-                </div>
-                <div class="content">
-                    <div id="car-grid">
-                        <?php 
-                            $sql = "SELECT * FROM car WHERE carID in (1,4,7)";
-                            $result = mysqli_query($link, $sql);
-                            if($result->num_rows > 0){
-                                while($row = $result->fetch_assoc()){
-                                    echo    "<a class='card' id=".$row['carID']." href='car.php?carID=".$row['carID']."'>
-                                                <img src='img/".$row['carPic']."'>
-                                                <div class='details'>
-                                                    <h3>".$row['carName']."</h3>
-                                                    <p>".$row['carFuel']." | ".$row['carGearBox']." | ".$row['carBHP']."</p>
-                                                    <div class='price'>
-                                                        <h4>Starting At: </h4>
-                                                        <h4>£".$row['carMonthlyRate']."/month<sup>*including VAT</sup></h4>
-                                                    </div>
-                                                </div>
-                                            </a>";
-                                }
+            </div>
+            <div class="content">
+                <div id="car-grid">
+                    <?php 
+                        $sql = "SELECT * FROM car WHERE carID in (1,4,7)";
+                        $result = mysqli_query($link, $sql);
+                        if($result->num_rows > 0){
+                            while($row = $result->fetch_assoc()){
+                                echo    "<a class='card' id=".$row['carID']." href='car.php?carID=".$row['carID']."'>
+                                        <img src='img/".$row['carPic']."'>
+                                        <div class='details'>
+                                        <h3>".$row['carName']."</h3>
+                                        <p>".$row['carFuel']." | ".$row['carGearBox']." | ".$row['carBHP']."</p>
+                                        <div class='price'>
+                                        <h4>Starting At: </h4>
+                                        <h4>£".$row['carMonthlyRate']."/month<sup>*including VAT</sup></h4>
+                                        </div>
+                                        </div>
+                                        </a>";
                             }
-                        ?>
-                    </div>
+                        }
+                    ?>
                 </div>
+            </div>
         </section>
 
         <!--Customer Reviews-->
@@ -82,7 +80,7 @@
             <div class="header">
                 <h1>CUSTOMER REVIEWS</h1>
                 <h3>You Happy, We Happy</h3>
-                </div>
+            </div>
             <div class="row">
                 <div class="cust">
                     <p>"Well done Ling! A very good service supplying new Astra. Please send more gifts! Xxx."</p>
@@ -99,19 +97,6 @@
             </div>
         </section>
 		
-		  <!--ADD TO CART-->
-        <section id="cart">
-            <div class="header">
-                <h1><i class="fa fa-shopping-cart" style="font-size:36px"></i>&nbsp;&nbsp;ADD TO CART</h1>
-            </div>
-            <div class="cars">
-                <br><br>
-                <?php include("addtocart.php"); ?>
-            </div>
-          
-        </section>
-
-
         <!--FAQ-->
         <section class="faq">
             <div class="header">

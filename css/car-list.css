@@ -1,15 +1,19 @@
+body {
+    display: flex;
+    flex-flow: column;
+    gap: 1em;
+}
+
 .content {
+    align-self: center;
+    width: fit-content;
     display: flex;
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    padding-left: 10px;
-    padding-right: 10px;
 }
 
 #car-grid {
-    margin: 10px;
-    width: 100%;
     display: grid;
     grid-template-columns: 20rem 20rem 20rem;
     grid-template-rows: max-content max-content max-content;
@@ -53,3 +57,7 @@
     font-weight: 100;
     font-size: 10px;
 }
+.footer {
+    margin-top: auto;
+}
+

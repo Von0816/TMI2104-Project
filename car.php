@@ -30,9 +30,10 @@
                         <p>£<?php echo $car['carMonthlyRate']; ?><sup>*including VAT</sup></p>
                     </div>
                 </div>
-                <form action="booking.php" name="carForm" method="post">
-                    <input type="hidden" id ="carType" name="carType" value=<?php echo $car['carID']; ?>/>
-                    <button type="submit" name = "submit" id="atc-btn">Book Now </button>
+                <form action="atc.php" method="post">
+                    <input type="hidden" name="carID" value="<?php echo $car['carID']; ?>"/>
+                    <input type="hidden" name="carName" value="<?php echo $car['carName']; ?>"/>
+                    <button type="submit" name="atc" id="atc-btn">Add To Cart</button>
                 </form>
             </div>
             <div id="car-specs">
@@ -66,7 +67,7 @@
         <!--FOOTER-->
         <section class="footer">
             <footer class="f">
-                <a href="css/carInfo.css"><img src="img/lingscars-logo.png"></a>           
+                <a href="index.php"><img src="img/lingscars-logo.png"></a>           
                 <p> Company Reg No: 6178634 || VAT No: 866 0241 30 <br>
                     © Copyright 2004 - 2022 LINGsCARS.com. All rights reserved.</p>
             </footer>

@@ -9,7 +9,7 @@
         <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');</style> 
 
     </head>
-    <body id="body">
+    <body>
 
         <!--nav bar-->
         <?php include("navbar.php"); ?>

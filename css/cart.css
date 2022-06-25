@@ -1,0 +1,82 @@
+body {
+    display: flex;
+    flex-flow: column;
+}
+
+#cart-content {
+    width: auto;
+    padding: 1em;
+    display: flex;
+    flex-flow: column;
+}
+
+#cart-content h1 {
+    margin: 0;
+    width: 100%;
+}
+
+#cart-item {
+    width: auto;
+    display: flex;
+    background-color: #EDEDED;
+    padding: 1em;
+    gap: 1em;
+}
+
+#cart-item img {
+    max-height: 10em;
+    width: auto;
+}
+
+#item-details {
+    display: flex;
+    flex-flow: column;
+}
+
+#item-details h2 {
+    margin: 0;
+}
+
+#item-short-desc {
+    display: flex;
+    gap: .5em;
+}
+
+#car-rate {
+    margin-left: auto;
+    align-self: center;
+}
+
+#cc {
+    margin-top: .2em;
+    margin-left: auto;
+    color: #444444;
+    text-decoration-line: none;
+}
+
+#price-details {
+    margin-left: auto;
+    display: flex;
+    gap: .5em;
+}
+
+#price-details .label {
+    font-weight: 700;
+}
+
+#checkout-btn {
+  width: 140px;
+  border: 0;
+  padding: 12px 10px;
+  outline: none;
+  color: #fff;
+  background: linear-gradient(to right, #fb5283,#ff3527);
+  cursor: pointer;
+  text-decoration-line: none;
+  text-align: center;
+  margin-left: auto;
+}
+
+.footer {
+    margin-top: auto;
+}

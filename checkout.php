@@ -1,15 +1,22 @@
-<?php include("connection.php"); ?>
-<?php include("navBarIndex.php"); ?>
-<br>
+<?php 
+  include("connection.php"); 
+
+  // if(!isset($_SESSION['userID'])){
+  //     echo '<script type="text/javascript">alert("You need to log in or register first before making your payment..");window.location="index.php";</script>';
+  // }
+?>
+
+<!DOCTYPE html>
 <html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-<link rel="stylesheet" href="css/main.css">
-<link rel="stylesheet" href="css/checkout.css">
-<script src="index.js"></script>
-</head>
-    <body id="body">   
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/checkout.css">
+  </head>
+  <body>
+    <?php include("navbar.php"); ?>
+
        <div class="row">
           <div class="col-75">
             <div class="container">
@@ -91,7 +98,7 @@
     </div>
   </div>
 </div>
-    <script type="text/javascript" src="checkout.js"></script><br><br><br>
+    <script type="text/javascript" src="js/checkout.js"></script><br><br><br>
     
     <section class="footer">
         <footer class="f">

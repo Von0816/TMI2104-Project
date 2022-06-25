@@ -1,6 +1,11 @@
 window.addEventListener('load', () => {
     const dropdownBtn = document.getElementById("dropdown-btn");
     const dropdownList = document.getElementById("dropdown-list");
+    const cartBtn = document.getElementById("cart-btn");
+
+    cartBtn.addEventListener('click', () => {
+        window.location.assign("cart.php");
+    })
 
     if(dropdownBtn !== null){
         dropdownBtn.addEventListener('click', () => {

@@ -31,13 +31,23 @@ nav {
     background: rgba(255, 255, 255, 0.5);
 }
 
-.align-end {
+
+#end{
     margin-left: auto;
+    gap: 3em;
 }
 
 #login-btn {
-    margin-right: 2rem;
+    margin-right: 2em;
 }
+
+#cart-btn {
+    filter: invert(100%) sepia(0%) saturate(7498%) hue-rotate(168deg) brightness(100%) contrast(103%);
+    height: 30%;
+    width: auto;
+    cursor: pointer;
+}
+
 
 #dropdown-btn {
     border: none;
