@@ -1,174 +1,113 @@
-*{
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: sans-serif;	
+body{
+    margin: 0;
+    padding: 0;
+    display: grid;
+    height: 100vh;
+    width: fit-content;
+    font-family: 'Roboto Mono', monospace;
+    grid-template-columns: 20vw 80vw;
+    grid-template-rows: 100%;
+    background-color: #DFF6FF;
 }
 
-body
-{
-	
-	min-height: 100vh;
-	overflow-x: hidden;
-	text-align: center;
+#sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    height: 110%;
+    background-color: white;
+    align-items: center;
+    padding: 1.5rem;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
 }
 
-.container
-{
-	position: relative;
-	width: 100%;
-}
-.navigation
-{
-	position: fixed;
-	width: 300px;
-	height: 100%;
-	background: #201f1f;
-	border-left: 10px solid #201f1f;
-	transition: 0.5s;
-	overflow: hidden;
-}
-.navigation.active
-{
-	width: 80px;
-}
-.navigation ul
-{
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-}
-.navigation ul li
-{
-	position: relative;
-	width: 100%;
-	/*list-form: none;*/
-	border-top-left-radius: 30px;
-	border-bottom-left-radius: 30px;
+.sidebar-btn{
+    width: 90%;
+    /* border: 1px black solid; */
+    border-radius: 7px;
+    text-align: start;
+    margin: 0;
+    padding: 0.5rem;
+    cursor: pointer;
+    font-size: 1em;
 }
 
-.navigation ul li:hover,
-.navigation ul li.hovered
-{
-	background: white;
-}
-.navigation ul li:nth-child(1)
-{
-	margin-bottom: 40px;
-	pointer-events: none;
-}
-.navigation ul li a
-{
-	position: relative;
-	display: block;
-	width: 100%;
-	display: flex;
-	text-decoration: none;
-	color: white;
-}
-.navigation ul li:hover a,
-.navigation ul li.hovered a
-{
-	color: #DED4BD;
-}
-.navigation ul li a .icon
-{
-	position: relative;
-	display: block;
-	min-width: 60px;
-	height: 60px;
-	line-height: 70px;
-	text-align: center;
-}
-.navigation ul li a .icon ion-icon
-{
-	font-size: 3em;
-}
-.navigation ul li a .title
-{
-	position: relative;
-	display: block;
-	padding: 0 10px;
-	height: 60px;
-	font-size: 1.5em;
-	line-height: 60px;
-	text-align: start;
-	white-space: nowrap;
+.active, .sidebar-btn:hover, .logout-btn:hover{
+    background-color: #47B5FF;
 }
 
-.navigation ul li:hover a::before,
-.navigation ul li.hovered a::before
-{
-	content: '';
-	position: absolute;
-	right: 0;
-	top: -50px;
-	width: 50px;
-	height: 50px;
-	background: transparent;
-	border-radius: 50%;
-	box-shadow: 35px 35px 0 10px white;
-	pointer-events: none;
+/* .sidebar-btn:active{
+    background-color: #F9F9F9;
+} */
+
+.mainbar {
+    height: 90vh;
+    /* display: grid; */
+    /* border-radius: 10px; */
+    /* background-color: #47B5FF; */
+    padding: 1.5rem;
+    gap: 0.5rem;
+    /* box-shadow: 0px 0px 10px rgba(0,0,0,0.5); */
 }
 
-.navigation ul li:hover a::after,
-.navigation ul li.hovered a::after
-{
-	content: '';
-	position: absolute;
-	right: 0;
-	bottom: -50px;
-	width: 50px;
-	height: 50px;
-	background: transparent;
-	border-radius: 50%;
-	box-shadow: 35px -35px 0 10px white;
-	pointer-events: none;
+.table-container {
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    background-color: white;
+    width: 95%;
+    box-shadow: 0px 0px .5rem rgba(6, 40, 61, .5);
 }
 
-  
-  input[type=text], select {
+
+.no-border-input {
+    font-size: inherit;
+    border: none;
+    color: black;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+
+.logout-btn{
+    cursor: pointer;
+    width: fit-content;
+    /* border: 1px black solid; */
+    border-radius: 7px;
+    text-align: center;
+    margin: 0;
+    padding: 0.5rem;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+input[type=text] {
+    font-family: 'Roboto Mono', monospace;
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     display: block;
     border: 1px solid #ccc;
-    border-radius: 4px;
     box-sizing: border-box;
   }
-  
-  input[type=submit] {
+
+input[type=submit] {
+    font-family: 'Roboto Mono', monospace;
     width: 100%;
-    background-color: #04AA6D;
-    color: white;
+    background-color: #47B5FF;
+    color: black;
+    font-weight: bold;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-  }
-  
-  input[type=submit]:hover {
+}
+
+input[type=submit]:hover {
     background-color: #45a049;
-  }
-
-  label{
-    width: 50%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: block;
-    border-radius: 4px;
-    box-sizing: border-box;
-    text-align: left;
-  }
-  
-  div.container2 {
-    width:60%;
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-    margin-left:30%
-  }
-
-      
+}
