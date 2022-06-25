@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Log In</title>
+        <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');</style> 
+        <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="login.css">
+    </head>
+    <body>
+        <div id="box">
+            <img src="../img/logo.png" alt="">
+            <h1>Log In</h1>
+            <form action="login.php" method="POST" id="login-form">
+                <div class="form-el">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" required>
+                </div>
+                <div class="form-el">
+                    <div>
+                        <label for="password">Password</label>
+                        <p id="pswVis">Show</p>
+                    </div>
+                    <input type="password" name="password" id="password" required>
+                </div>
+                <div class="form-el">
+                    <button type="submit" name="submit" id="submit">Log In</button>
+                </div>
+            </form>
+            <small>New member? Create new account <a href="../signup/signup.html" id="signup-link">here</a></small>
+            <a href="../index.php">return to main page</a>
+       </div>        
+    </body>
+</html>

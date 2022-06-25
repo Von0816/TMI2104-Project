@@ -37,7 +37,7 @@ input:focus {
     margin: auto;
 }
 
-#signup-form{
+#login-form{
     display: flex;
     flex-flow: column;
     gap: .5em;
@@ -53,25 +53,6 @@ input:focus {
 .form-el div {
     display: flex;
     align-items: center;
-}
-
-.form-el small {
-    visibility: hidden;
-    max-width: 20em;
-    text-align: justify;
-}
-
-.error input {
-    border-color: red;
-}
-
-.error small {
-    visibility: visible;
-    color: #DA0037;
-}
-
-.valid input{
-   border-color: #40e200; 
 }
 
 #pswVis {

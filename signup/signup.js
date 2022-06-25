@@ -1,6 +1,5 @@
 
 window.addEventListener('load', () => {
-    console.log("js loaded");
     const form = document.getElementById("signup-form");
     const username = document.getElementById("username");
     const name = document.getElementById("name");
