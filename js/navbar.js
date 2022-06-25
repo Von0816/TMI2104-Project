@@ -2,6 +2,11 @@ window.addEventListener('load', () => {
     const dropdownBtn = document.getElementById("dropdown-btn");
     const dropdownList = document.getElementById("dropdown-list");
     const cartBtn = document.getElementById("cart-btn");
+    const homeBtn = document.getElementById("nav-logo");
+
+    homeBtn.addEventListener('click', () => {
+        window.location.assign("index.php");
+    })
 
     cartBtn.addEventListener('click', () => {
         window.location.assign("cart.php");

@@ -30,7 +30,7 @@
                             </div>";
                     echo "<h4 id='car-rate'>£".$car['carMonthlyRate']."</h4>";
                     echo "</div>";
-                    echo "<a href='c.php' id='cc'>clear cart</a>";
+                    echo "<a href='cc.php' id='cc'>clear cart</a>";
                     echo    "<div id='price-details'>
                                 <p class='label'>Total Price :</p>
                                 <p>£".$car['carMonthlyRate']."</p>

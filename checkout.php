@@ -1,9 +1,9 @@
 <?php 
   include("connection.php"); 
 
-  // if(!isset($_SESSION['userID'])){
-  //     echo '<script type="text/javascript">alert("You need to log in or register first before making your payment..");window.location="index.php";</script>';
-  // }
+  if(!isset($_SESSION['userID'])){
+      echo '<script type="text/javascript">alert("You need to log in or register first before making your payment..");window.location="login/login.html";</script>';
+  }
 ?>
 
 <!DOCTYPE html>

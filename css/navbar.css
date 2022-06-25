@@ -1,11 +1,9 @@
 nav {
     display: flex;
     gap: 1em;
-    position: sticky;
     height: max-content;
     background-color: #201f1f;
     width: 100%;
-    align-items: center;
     z-index: 1;
 }
 
@@ -31,9 +29,12 @@ nav {
     background: rgba(255, 255, 255, 0.5);
 }
 
+.align-end {
+    margin-left: auto;
+}
+
 
 #end{
-    margin-left: auto;
     gap: 3em;
 }
 
@@ -43,7 +44,7 @@ nav {
 
 #cart-btn {
     filter: invert(100%) sepia(0%) saturate(7498%) hue-rotate(168deg) brightness(100%) contrast(103%);
-    height: 30%;
+    height: 1.3em;
     width: auto;
     cursor: pointer;
 }
@@ -102,5 +103,6 @@ nav {
 }
 
 #nav-logo {
-    width: 100px;
+    cursor: pointer;
+    width: 7em;
 }

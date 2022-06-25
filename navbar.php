@@ -3,9 +3,7 @@
 <script src="js/navbar.js"></script>
 <nav>
     <div class="nav-item">
-        <a href="checkNavBarLogo.php">
-        <img id="nav-logo" src="img/logo.png" onclick="imageProfile()" alt="logo">
-        </a>
+        <img id="nav-logo" src="img/logo.png" alt="logo">
     </div>
     <div class="nav-item">
         <a class="nav-btn" href="car-list.php">Car List</a>
@@ -16,10 +14,8 @@
     <div class="nav-item">
         <a class="nav-btn" href="support.php">Support</a>
     </div>
-    <div class="nav-item" id="end">
-        <div class="nav-item">
-            <img id="cart-btn" src="img/cart-shopping-solid.svg" alt="">
-        </div>
+    <div class="nav-item align-end" id="end">
+        <img id="cart-btn" src="img/cart-shopping-solid.svg" alt="">
         <?php 
             if(!isset($_SESSION['userID'])){
                 echo    "<div class='nav-item'>

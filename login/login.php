@@ -35,7 +35,7 @@
 
                     if(isset($_SESSION['username'])){
                         //echo "Sucessfully logged in as member..Welcome". $_SESSION['username'];
-                        echo "<script>window.location='../indexMember.php';</script>";
+                        echo "<script>window.location='../index.php';</script>";
                         
                     }
                             

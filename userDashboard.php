@@ -21,7 +21,7 @@
           }
           else{
             echo '<script type="text/javascript">alert("You need to log in or register ...");
-            window.location="indexMember.php";</script>';
+            window.location="index.php";</script>';
           }
 ?>
 
@@ -29,13 +29,15 @@
 <html>
     <head>
     <link rel="stylesheet" href="css/Udashboard.css">
+    <link rel="stylesheet" href="css/main.css">
+    <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');</style> 
     <script src="member-signup.js" defer></script>
     </head>
     <body>
     <div id="sidebar">
             <div class="sidvar-item logout-btn" onclick="window.location.href ='logout.php'">Logout</div>
             <h1>User Dashboard</h1>
-            <div class="sidebar-item sidebar-btn" id="analytics-btn" onclick="window.location.href ='indexMember.php'">Home</div> 
+            <div class="sidebar-item sidebar-btn" id="analytics-btn" onclick="window.location.href ='index.php'">Home</div> 
             <div class="sidebar-item sidebar-btn active" id="users-btn" onclick="window.location.href ='#profile'">Profile</div>
         </div>
 
