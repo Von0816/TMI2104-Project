@@ -113,54 +113,9 @@ img {
 
 /*Featured Cars*/
 .feaCar{
-  margin-bottom:100px;
+ /* margin-bottom:5px;*/
   height: 100%;
-
-}
-div.car {
-  border: 1px solid #ccc;
-}
-
-div.car:hover {
-  border: 1px solid red;
-}
-
-div.car img {
-  width: 100%;
-  height: auto;
-  border-bottom: 1px solid #ccc;
-}
-
-div.car a{
-  text-decoration: none;
-}
-div.details {
-  padding: 15px;
-  color: #000000;
-}
-
-div.details p{
-  font-size: smaller;
-}
-
-div.details h4{
-  color: red;
-}
-
-div.details sup{
-  color: #000000;
-  font-size: smaller;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-.carDetails {
-  padding: 0 6px;
-  float: left;
-  width: 25%;
-  
+  margin-bottom: -190px;
 }
 
 
