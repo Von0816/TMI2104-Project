@@ -71,7 +71,7 @@
                         carPaint = '$carPaint',
                         carTerm = '$carTerm',
                         carMonthlyRate = '$carMonthlyRate',
-                        carImgPath = '$carImgPath'
+                        carPic = '$carImgPath'
                     WHERE carID = $carID";
             $result = mysqli_query($link, $sql);
             if($result){

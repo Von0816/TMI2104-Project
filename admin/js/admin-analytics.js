@@ -1,5 +1,4 @@
 function generateGraph(dataArray){
-    console.log(dataArray)
     const ctx = document.getElementById('myChart').getContext('2d');
     const myChart = new Chart(ctx, {
         type: 'line',

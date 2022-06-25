@@ -6,6 +6,7 @@
         // Initialize the session.
         session_unset(); // Unset all of the session variables.
         session_destroy(); // Finally, destroy the session.
+        echo "<script>window.location='index.php';</script>";
             
     }
 

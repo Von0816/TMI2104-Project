@@ -17,7 +17,7 @@
         $query = "SELECT * FROM car WHERE carID = $carID";
                 $check = mysqli_query($link, $query);
                 if($check->num_rows == 0){
-        $sql = "INSERT INTO car(carID, carName, carBody, carTrim, carFuel, carBHP, carGearBox, carPaint, carTerm, carMonthlyRate, carImgPath) VALUES('$carID','$carName','$carBody','$carTrim','$carFuel','$carBHP','$carGearBox','$carPaint','$carTerm','$carMonthlyRate', '$carImgPath')";
+        $sql = "INSERT INTO car(carID, carName, carBody, carTrim, carFuel, carBHP, carGearBox, carPaint, carTerm, carMonthlyRate, carPic) VALUES('$carID','$carName','$carBody','$carTrim','$carFuel','$carBHP','$carGearBox','$carPaint','$carTerm','$carMonthlyRate', '$carImgPath')";
                     $result = mysqli_query($link, $sql);
                     if($result){
                         echo "<script type='text/javascript'>alert('Car Added')</script>";

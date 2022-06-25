@@ -5,11 +5,10 @@
 
 <!DOCTYPE html>
     <head>
-        <link rel="stylesheet" href="../main.css">
+        <link rel="stylesheet" href="../css/main.css">
         <link rel="stylesheet" href="css/admin.css">
-        <style>@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');</style> 
+        <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');</style> 
         <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
-        <script src="main.js"></script>
         <script src="js/admin.js"></script>
         <script src="js/admin-cars.js" defer></script>
     </head>
@@ -81,7 +80,7 @@
                                                 <td><input type='text' class='no-border-input' form='editCarForm' name='paint-".$row['carID']."' value='".$row['carPaint']."' disabled></td>
                                                 <td><input type='text' class='no-border-input' form='editCarForm' name='term-".$row['carID']."' value='".$row['carTerm']."' disabled></td>
                                                 <td><input type='number' class='no-border-input' form='editCarForm' name='rate-".$row['carID']."' value='".$row['carMonthlyRate']."' disabled></td>
-                                                <td><input type='text' class='no-border-input' form='editCarForm' name='imgPath-".$row['carID']."' value='".$row['carImgPath']."' disabled></td>
+                                                <td><input type='text' class='no-border-input' form='editCarForm' name='imgPath-".$row['carID']."' value='".$row['carPic']."' disabled></td>
                                                 <td class='action-btn-group'>
                                                     <button class='edit-btn' onclick="."editCar(".$row['carID'].")>Edit</button>
                                                     <button class='del-btn' type='submit' name='del-btn' form='delCarForm' value=".$row['carID'].">Delete</button>
@@ -107,7 +106,7 @@
                                                 <td><input type='text' class='no-border-input' form='editCarForm' name='paint-".$row['carID']."' value='".$row['carPaint']."' disabled></td>
                                                 <td><input type='text' class='no-border-input' form='editCarForm' name='term-".$row['carID']."' value='".$row['carTerm']."' disabled></td>
                                                 <td><input type='number' class='no-border-input' form='editCarForm' name='rate-".$row['carID']."' value='".$row['carMonthlyRate']."' disabled></td>
-                                                <td><input type='text' class='no-border-input' form='editCarForm' name='imgPath-".$row['carID']."' value='".$row['carImgPath']."' disabled></td>
+                                                <td><input type='text' class='no-border-input' form='editCarForm' name='imgPath-".$row['carID']."' value='".$row['carPic']."' disabled></td>
                                                 <td class='action-btn-group'>
                                                     <button class='edit-btn' onclick="."editCar(".$row['carID'].")>Edit</button>
                                                     <button class='del-btn' type='submit' name='del-btn' form='delCarForm' value=".$row['carID'].">Delete</button>
@@ -134,7 +133,7 @@
                                                 <td><input type='text' class='no-border-input' form='editCarForm' name='paint-".$row['carID']."' value='".$row['carPaint']."' disabled></td>
                                                 <td><input type='text' class='no-border-input' form='editCarForm' name='term-".$row['carID']."' value='".$row['carTerm']."' disabled></td>
                                                 <td><input type='number' class='no-border-input' form='editCarForm' name='rate-".$row['carID']."' value='".$row['carMonthlyRate']."' disabled></td>
-                                                <td><input type='text' class='no-border-input' form='editCarForm' name='imgPath-".$row['carID']."' value='".$row['carImgPath']."' disabled></td>
+                                                <td><input type='text' class='no-border-input' form='editCarForm' name='imgPath-".$row['carID']."' value='".$row['carPic']."' disabled></td>
                                                 <td class='action-btn-group'>
                                                     <button class='edit-btn' onclick="."editCar(".$row['carID'].")>Edit</button>
                                                     <button class='del-btn' type='submit' name='del-btn' form='delCarForm' value=".$row['carID'].">Delete</button>

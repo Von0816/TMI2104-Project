@@ -21,12 +21,11 @@
 
 <!DOCTYPE html>
     <head>
-        <link rel="stylesheet" href="../main.css">
+        <link rel="stylesheet" href="../css/main.css">
         <link rel="stylesheet" href="css/admin.css">
         <link rel="stylesheet" href="css/admin-analytics.css">
-        <style>@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');</style> 
+        <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');</style> 
         <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
-        <script src="main.js"></script>
         <script src="js/admin.js"></script>
         <script src="js/admin-analytics.js"></script>
 
