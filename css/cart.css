@@ -3,6 +3,10 @@ body {
     flex-flow: column;
 }
 
+.align-left {
+    margin-left: auto;
+}
+
 #cart-content {
     width: auto;
     padding: 1em;

@@ -15,7 +15,7 @@
             <?php
                 // echo "<script>console.log('".$_SESSION['cart']."')</script>";
                 if(isset($_SESSION['cart'])){
-                    $sql = "SELECT carName, carFuel, carBHP, carGearBox, carPic, carTerm, carMonthlyRate FROM car WHERE carID =".$_SESSION['cart'];
+                    $sql = "SELECT carID, carName, carFuel, carBHP, carGearBox, carPic, carTerm, carMonthlyRate FROM car WHERE carID =".$_SESSION['cart'];
                     $result = mysqli_query($link, $sql);
                     $car = $result->fetch_assoc();
                     echo "<div id='cart-item'>";
@@ -35,7 +35,10 @@
                                 <p class='label'>Total Price :</p>
                                 <p>£".$car['carMonthlyRate']."</p>
                             </div>";
-                    echo "<a href='checkout.php' id='checkout-btn'>Checkout</a>";
+                    echo    "<form action='booking.php' method='POST' class='align-left'>
+                                <input type='hidden' name='carID' value='".$car['carID']."'>
+                                <button type='submit' name='checkout' id='checkout-btn'>Checkout</button>
+                            </form>";
                 }
                 else {
                     echo "<h2>Your Cart Is Empty!</h2>";
