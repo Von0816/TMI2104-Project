@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="css/support.css">
         <link rel="stylesheet" href="css/main.css">
 		<link rel="icon" type="image/x-icon" href="img/logo2.png">
-        <script src="support.js"></script>
+        <script src="js/support.js"></script>
 
 	<style>
 		.bg-img {
