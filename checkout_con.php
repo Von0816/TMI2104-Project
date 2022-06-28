@@ -53,7 +53,7 @@
 
         echo "<script type='text/javascript'>alert('Your payment is successful.. Thank you!!'); 
         window.open('receipt.php', '_blank');
-        location.href='indexMember.php';</script>";
+        location.href='index.php';</script>";
 
         //echo "<script type='text/javascript'> window.open('receipt.php', '_blank'); </script>";
         //echo "<script>location.href='indexMember.php';</script>";
