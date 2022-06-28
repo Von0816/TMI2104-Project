@@ -9,16 +9,19 @@ window.addEventListener('load', () => {
     const password = document.getElementById("password");
     const pswVis = document.getElementById("pswVis");
 
-    pswVis.addEventListener('click', () => {
-        if(pswVis.innerText === 'Show'){
-            pswVis.innerText = 'Hide';
-            password.type = 'text';
-        }
-        else {
-            pswVis.innerText = 'Show';
-            password.type = 'password';
-        }
-    })
+    if(pswVis != null){
+        pswVis.addEventListener('click', () => {
+            if(pswVis.innerText === 'Show'){
+                pswVis.innerText = 'Hide';
+                password.type = 'text';
+            }
+            else {
+                pswVis.innerText = 'Show';
+                password.type = 'password';
+            }
+        })
+    }
+
 
     username.addEventListener('input', (e) => {
         const usernameVal = username.value;

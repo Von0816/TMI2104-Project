@@ -85,7 +85,6 @@ input::-webkit-inner-spin-button {
 }
 
 input[type=text] {
-    font-family: 'Roboto Mono', monospace;
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -95,7 +94,6 @@ input[type=text] {
   }
 
 input[type=submit] {
-    font-family: 'Roboto Mono', monospace;
     width: 100%;
     background-color: #47B5FF;
     color: black;

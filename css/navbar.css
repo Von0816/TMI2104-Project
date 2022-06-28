@@ -53,13 +53,13 @@ nav {
 #dropdown-btn {
     border: none;
     font-size: 1em;
-    background-color: white;
+    background-color: #201f1f;
     height: 100%;
     padding: 0 2em;
 }
 
 #dropdown-btn:hover, .dropdown-btn:focus {
-    background-color: #ddd
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .dropdown {

@@ -6,8 +6,8 @@
         <link rel="stylesheet" href="css/about-us.css">
         <link rel="stylesheet" href="css/main.css">
 		<link rel="icon" type="image/x-icon" href="img/logo2.png">
-        <script src="about-us.js"></script>
-		<script src="index.js"></script>
+        <script src="js/about-us.js"></script>
+		<script src="js/index.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<style>

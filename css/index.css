@@ -1,7 +1,7 @@
 body {
   display: flex;
   flex-flow: column;
-  gap: .5em;
+  gap: 0;
   flex: 0 0 auto;
 }
 

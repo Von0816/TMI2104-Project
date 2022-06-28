@@ -14,4 +14,5 @@
 	
 	//start session
 	session_start();
+	$_SESSION['cart'] = null;
 ?>

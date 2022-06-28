@@ -5,12 +5,12 @@ include "connection.php";
 $mID = $_SESSION['userID'];
 
 if(isset($_POST['update'])){
-    $mUserName = $_POST['memberUsername'];
-    $mName = $_POST['memberName'];
-    $mAddr = $_POST['memberAddress'];
-    $mEmail = $_POST['memberEmail'];
-    $mHP = $_POST['memberHP'];
-    $mPass = $_POST['memberPassword'];
+    $mUserName = $_POST['username'];
+    $mName = $_POST['name'];
+    $mAddr = $_POST['address'];
+    $mEmail = $_POST['email'];
+    $mHP = $_POST['hp'];
+    $mPass = $_POST['password'];
 
     $sql = "UPDATE member SET memberUsername = '$mUserName', memberName = '$mName',
     memberAddress = '$mAddr', memberEmail = '$mEmail', memberHP = '$mHP', memberPassword = '$mPass'
