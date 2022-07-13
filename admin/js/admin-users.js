@@ -42,7 +42,6 @@ const validateMember = (e) => {
     const memberUsername = document.getElementById("memberUsername");
     const memberPassword = document.getElementById("memberPassword");
     const memberName = document.getElementById("memberName");
-    const memberGender = document.getElementById("memberGender");
     const memberEmail = document.getElementById("memberEmail");
     const memberHP = document.getElementById("memberHP");
     if(Number(memberID.value) === 0){
@@ -79,10 +78,6 @@ const validateMember = (e) => {
     }
     else if(!validateStrWS(memberName.value)){
         setError(memberName, "member name can only contains letters and spaces");
-        e.preventDefault();
-    }
-    else if(memberGender.value.trim() === ''){
-        setError(memberGender, "Please select member gender");
         e.preventDefault();
     }
     else if(memberAddress.value.trim() === ''){

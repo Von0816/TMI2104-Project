@@ -1,4 +1,3 @@
-
 window.addEventListener('load', () => {
     const form = document.getElementById("signup-form");
     const username = document.getElementById("username");
@@ -306,10 +305,10 @@ window.addEventListener('load', () => {
         const formEl = input.parentElement;
         const small = formEl.getElementsByTagName("small");
 
-        if(formEl.classList.contains("valid")){
-            formEl.classList.remove("valid");
+        if(input.classList.contains("valid")){
+            input.classList.remove("valid");
         }
-        formEl.classList.add("error");
+        input.classList.add("error");
 
         for(let i in small){
             small[i].innerText = errorMsg;

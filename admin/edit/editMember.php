@@ -9,7 +9,6 @@
         $memberUsername= filterInput($_POST["memberUsername-$memberID"]);
         $memberPassword = filterInput($_POST["memberPassword-$memberID"]); 
         $memberName = filterinput($_POST["name-$memberID"]);
-        $memberGender = filterinput($_POST["gender-$memberID"]);
         $memberAddress = filterinput($_POST["address-$memberID"]);
         $memberEmail = filterinput($_POST["email-$memberID"]);
         $memberHP = filterinput($_POST["HP-$memberID"]);
@@ -41,9 +40,6 @@
         else if(!preg_match("/^[a-zA-Z\s]*$/", $memberName)){
             $error .= "Member name connot contains symbols and digits\\n";
         }
-        if(empty($memberGender)){
-            $error .= "Member gender cannot be blank\\n";
-        }
         else if(!preg_match("/^[a-zA-Z]*$/", $memberGender)){
             $error .= "Enter a valid gender\\n";
         }
@@ -67,7 +63,6 @@
                         memberUsername = '$memberUsername',
                         memberPassword = '$memberPassword',
                         memberName = '$memberName',
-                        memberGender = '$memberGender',
                         memberAddress = '$memberAddress',
                         memberEmail = '$memberEmail',
                         memberHP = '$memberHP'
@@ -80,7 +75,7 @@
                 echo "<script type='text/javascript'>window.location.replace('../admin-users.php')</script>";
             }
             else {
-                echo "<script type='text/javascript'>alert('Failed')</script>";
+                echo "<script type='text/javascript'>alert('".mysqli_error($link)."')</script>";
                 echo "<script type='text/javascript'>window.location.replace('../admin-users.php')</script>";
             }
         }
@@ -89,7 +84,9 @@
         }
 
 
+
     }
+        mysqli_close($link);
 
     function handleError($msg){
             echo "<script type='text/javascript'>alert('".$msg."')</script>";

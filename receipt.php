@@ -41,8 +41,10 @@ if($set){
 $symbol = chr(163);
 $message = '<html><head><meta http-equiv="Content-Type” content="text/html; charset=utf-8”></head><body>';
 $message .= '<h1>Receipt from LINGsCARs Company</h1><br>';
-$message .= '<h3>Customer</h3>';
+$message .= '<h3>Billing Address</h3>';
 $message .= '<p>'.$_SESSION['firstname']." ".$_SESSION['lastname'].'<br>'.$_SESSION['address']."<br>".$_SESSION['city'] ." ".$_SESSION['state'].'<br><br>'.$_SESSION['email'].'<br></p><hr>';
+$message .= '<h3>Shipping Address</h3>';
+$message .= '<p>'.$_SESSION['firstname2']." ".$_SESSION['lastname2'].'<br>'.$_SESSION['address2']."<br>".$_SESSION['city2'] ." ".$_SESSION['state2'].'<br><br>'.$_SESSION['email2'].'<br></p><hr>';
 $message .= '<h3>Date of Purchase</h3>';
 $message .= '<p>'.$_SESSION['datetime'].'</p><hr>';
 $message .= '<h3>Purchase Details</h3>';
@@ -134,6 +136,11 @@ try {
 				<?php
 					echo $_SESSION['firstname']." ". $_SESSION['lastname']."<br>";
 					echo $_SESSION['address']."<br>".$_SESSION['city']." ".$_SESSION['state']."<br>";
+				?>
+				<br><br><b>Shipping Address</b><br>
+				<?php
+					echo $_SESSION['firstname2']." ". $_SESSION['lastname2']."<br>";
+					echo $_SESSION['address2']."<br>".$_SESSION['city2']." ".$_SESSION['state2']."<br>";
 				?>
 			</div>	
 

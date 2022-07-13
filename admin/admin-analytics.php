@@ -15,6 +15,8 @@
     $query = "SELECT * FROM booking WHERE bookingStatus = 'completed'";
     $result = mysqli_query($link, $query);
     $carSold = mysqli_num_rows($result);
+    
+    mysqli_close($link);
 
     // echo json_encode($mthlySales);
 ?>

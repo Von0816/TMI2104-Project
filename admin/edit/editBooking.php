@@ -39,6 +39,7 @@
 
 
     }
+        mysqli_close($link);
 
     function handleError($msg){
             echo "<script type='text/javascript'>alert('".$msg."')</script>";

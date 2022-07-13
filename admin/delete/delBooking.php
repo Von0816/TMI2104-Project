@@ -9,8 +9,9 @@
             echo "<script type='text/javascript'>window.location.replace('../admin-bookings.php')</script>";
         }
         else {
-            echo "<script type='text/javascript'>alert('Deletion Failed')</script>";
+            echo "<script type='text/javascript'>alert('".mysqli_error($link)."')</script>";
             echo "<script type='text/javascript'>window.location.replace('../admin-bookings.php')</script>";
         }
     }
+        mysqli_close($link);
 ?>

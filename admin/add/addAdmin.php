@@ -24,6 +24,7 @@
         }
 
     }
+        mysqli_close($link);
 
 
     function filterInput($input){

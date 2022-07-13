@@ -129,7 +129,6 @@
                         <th>Username</th>
                         <th>Password</th>
                         <th>Name</th>
-                        <th>Gender</th>
                         <th>Address</th>
                         <th>Email</th>
                         <th>HP</th>
@@ -140,11 +139,6 @@
                         <td><input form="addMemberForm" type="text" name="memberUsername" id="memberUsername"></td>
                         <td><input form="addMemberForm" type="password" name="memberPassword" id="memberPassword"></td>
                         <td><input form="addMemberForm" type="text" name="memberName" id="memberName"></td>
-                        <td><select form="addMemberForm" name="memberGender" id="memberGender">
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                            <option value="other">Other</option>
-                        </select></td>
                         <td><input form="addMemberForm" type="text" name="memberAddress" id="memberAddress"></td>
                         <td><input form="addMemberForm" type="email" name="memberEmail" id="memberEmail"></td>
                         <td><input form="addMemberForm" type="text" name="memberHP" id="memberHP"></td>
@@ -163,13 +157,6 @@
                                                 <td><input type='text' class='no-border-input' form='editMemberForm' name='memberUsername-".$row['memberID']."' value='".$row['memberUsername']."' disabled></td>
                                                 <td><input type='text' class='no-border-input' form='editMemberForm' name='memberPassword-".$row['memberID']."' value='".$row['memberPassword']."' disabled></td>
                                                 <td><input type='text' class='no-border-input' form='editMemberForm' name='name-".$row['memberID']."' value='".$row['memberName']."' disabled></td>
-                                                <td>
-                                                    <select class='no-border-input' form='editMemberForm' name='gender-".$row['memberID']."' disabled>
-                                                        <option value='male' "; if($row['memberGender'] == 'male') {echo "selected";} echo ">Male</option>
-                                                        <option value='female' "; if($row['memberGender'] == 'female') {echo "selected";} echo">Female</option>
-                                                        <option value='other' "; if($row['memberGender'] == 'other') {echo "selected";} echo ">Other</option>
-                                                    </select>
-                                                </td>
                                                 <td><input type='text' class='no-border-input' form='editMemberForm' name='address-".$row['memberID']."' value='".$row['memberAddress']."' disabled></td>
                                                 <td><input type='email' class='no-border-input' form='editMemberForm' name='email-".$row['memberID']."' value='".$row['memberEmail']."' disabled></td>
                                                 <td><input type='text' class='no-border-input' form='editMemberForm' name='HP-".$row['memberID']."' value='".$row['memberHP']."' disabled></td>
@@ -192,13 +179,6 @@
                                                 <td><input type='text' class='no-border-input' form='editMemberForm' name='memberUsername-".$row['memberID']."' value='".$row['memberUsername']."' disabled></td>
                                                 <td><input type='text' class='no-border-input' form='editMemberForm' name='memberPassword-".$row['memberID']."' value='".$row['memberPassword']."' disabled></td>
                                                 <td><input type='text' class='no-border-input' form='editMemberForm' name='name-".$row['memberID']."' value='".$row['memberName']."' disabled></td>
-                                                <td>
-                                                    <select class='no-border-input' form='editMemberForm' name='gender-".$row['memberID']."' disabled>
-                                                        <option value='male' "; if($row['memberGender'] == 'male') {echo "selected";} echo ">Male</option>
-                                                        <option value='female' "; if($row['memberGender'] == 'female') {echo "selected";} echo">Female</option>
-                                                        <option value='other' "; if($row['memberGender'] == 'other') {echo "selected";} echo ">Other</option>
-                                                    </select>
-                                                </td>
                                                 <td><input type='text' class='no-border-input' form='editMemberForm' name='address-".$row['memberID']."' value='".$row['memberAddress']."' disabled></td>
                                                 <td><input type='email' class='no-border-input' form='editMemberForm' name='email-".$row['memberID']."' value='".$row['memberEmail']."' disabled></td>
                                                 <td><input type='text' class='no-border-input' form='editMemberForm' name='HP-".$row['memberID']."' value='".$row['memberHP']."' disabled></td>
@@ -222,13 +202,6 @@
                                                 <td><input type='text' class='no-border-input' form='editMemberForm' name='memberUsername-".$row['memberID']."' value='".$row['memberUsername']."' disabled></td>
                                                 <td><input type='text' class='no-border-input' form='editMemberForm' name='memberPassword-".$row['memberID']."' value='".$row['memberPassword']."' disabled></td>
                                                 <td><input type='text' class='no-border-input' form='editMemberForm' name='name-".$row['memberID']."' value='".$row['memberName']."' disabled></td>
-                                                <td>
-                                                    <select class='no-border-input' form='editMemberForm' name='gender-".$row['memberID']."' disabled>
-                                                        <option value='male' "; if($row['memberGender'] == 'male') {echo "selected";} echo ">Male</option>
-                                                        <option value='female' "; if($row['memberGender'] == 'female') {echo "selected";} echo">Female</option>
-                                                        <option value='other' "; if($row['memberGender'] == 'other') {echo "selected";} echo ">Other</option>
-                                                    </select>
-                                                </td>
                                                 <td><input type='text' class='no-border-input' form='editMemberForm' name='address-".$row['memberID']."' value='".$row['memberAddress']."' disabled></td>
                                                 <td><input type='email' class='no-border-input' form='editMemberForm' name='email-".$row['memberID']."' value='".$row['memberEmail']."' disabled></td>
                                                 <td><input type='text' class='no-border-input' form='editMemberForm' name='HP-".$row['memberID']."' value='".$row['memberHP']."' disabled></td>
@@ -254,7 +227,6 @@
         </script>
     </body>
 </html>
-
 <?php
-$link->close();
+    mysqli_close($link);
 ?>

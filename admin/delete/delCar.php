@@ -13,4 +13,5 @@
             echo "<script type='text/javascript'>window.location.replace('../admin-cars.php')</script>";
         }
     }
+        mysqli_close($link);
 ?>

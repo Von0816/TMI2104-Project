@@ -34,6 +34,7 @@
                 }
 
     }
+        mysqli_close($link);
     function filterInput($input){
         $input = trim($input);
         $input = stripslashes($input);

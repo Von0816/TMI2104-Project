@@ -49,6 +49,7 @@
 
 
     }
+        mysqli_close($link);
     function handleError($msg){
             echo "<script type='text/javascript'>alert('".$msg."')</script>";
             echo "<script type='text/javascript'>window.location.replace('../admin-users.php')</script>";

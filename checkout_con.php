@@ -13,6 +13,12 @@
         $address = $_POST["address"];
         $city = $_POST["city"];
         $state = $_POST["state"];
+        $fname2 = $_POST["firstname2"];
+        $lname2 = $_POST["lastname2"];
+        $email2 = $_POST["email2"];
+        $address2 = $_POST["address2"];
+        $city2 = $_POST["city2"];
+        $state2 = $_POST["state2"];
         $cardname = $_POST["cardname"];
         $cardnumber = $_POST["cardnumber"];
         $expmonth = $_POST["expmonth"];
@@ -37,8 +43,8 @@
 
         
 
-        $sql = "INSERT INTO payment(bookingID, paymentDateTime, paymentMethod, billing_fName, billing_lName, billing_email, billing_addr, billing_city, billing_state, nameOnCard, cardNum, cardEXPmonth, cardEXPyear, card_CVV)
-        VALUES ('$bookCar','$dateT','$payMethod','$fname', '$lname', '$email', '$address', '$city', '$state', '$cardname', '$cardnumber', '$expmonth', '$expyear', '$cvv')";
+        $sql = "INSERT INTO payment(bookingID, paymentDateTime, paymentMethod, billing_fName, billing_lName, billing_email, billing_addr, billing_city, billing_state, shipping_fName, shipping_lName, shipping_email, shipping_addr, shipping_city, shipping_state, nameOnCard, cardNum, cardEXPmonth, cardEXPyear, card_CVV)
+        VALUES ('$bookCar','$dateT','$payMethod','$fname', '$lname', '$email', '$address', '$city', '$state', '$fname2', '$lname2', '$email2', '$address2', '$city2', '$state2', '$cardname', '$cardnumber', '$expmonth', '$expyear', '$cvv')";
 
         $_SESSION['firstname'] = $fname;
         $_SESSION['lastname'] = $lname;
@@ -47,6 +53,12 @@
         $_SESSION['city'] = $city;
         $_SESSION['state'] = $state;
         $_SESSION['datetime'] = $dateT;
+        $_SESSION['firstname2'] = $fname2;
+        $_SESSION['lastname2'] = $lname2;
+        $_SESSION['email2'] = $email2;
+        $_SESSION['address2'] = $address2;
+        $_SESSION['city2'] = $city2;
+        $_SESSION['state2'] = $state2;
     }
 
     if(mysqli_query($link, $sql)){

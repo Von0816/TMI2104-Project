@@ -81,5 +81,102 @@ function validate() {
         document.myForm.cvv.focus() ;
         return false;
     }
+        //First name validation 
+    if( document.myForm.fname2.value == "" ){
+        alert( "Please provide your first name!" );
+        document.myForm.fname2.focus() ;
+        return false;
+    }
+    //Last name validation
+    if( document.myForm.lname2.value == "" ){
+        alert( "Please provide your last name!" );
+        document.myForm.lname2.focus() ;
+        return false;
+    }
+
+    //Email validation
+    if(document.myForm.email2.value =="") {
+        alert("Please enter your email.");
+        document.myForm.email2.focus();
+        return false;
+    }
+    var emailFormat = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    if(!document.myForm.email2.value.match(emailFormat)) {
+        alert("Please enter a correct email format with @.");
+        document.myForm.email2.focus();
+        return false;
+    }
+
+    //Address validation
+    if( document.myForm.adr2.value == "" ){
+        alert( "Please provide your address!" );
+        document.myForm.adr2.focus() ;
+        return false;
+    }
+    
+    //City validation
+    if( document.myForm.city2.value == "" ){
+    alert( "Please provide your city!" );
+    document.myForm.city2.focus() ;
+    return false;
+    }
+
+    //State validation
+    if( document.myForm.state2.value == "" ){
+        alert( "Please provide your state!" );
+        document.myForm.state2.focus() ;
+        return false;
+    }
 
 }
+
+// function validate2() {
+
+//     //First name validation 
+//     if( document.myForm2.fname2.value == "" ){
+//         alert( "Please provide your first name!" );
+//         document.myForm2.fname2.focus() ;
+//         return false;
+//     }
+//     //Last name validation
+//     if( document.myForm2.lname2.value == "" ){
+//         alert( "Please provide your last name!" );
+//         document.myForm2.lname2.focus() ;
+//         return false;
+//     }
+
+//     //Email validation
+//     if(document.myForm2.email2.value =="") {
+//         alert("Please enter your email.");
+//         document.myForm2.email2.focus();
+//         return false;
+//     }
+//     var emailFormat = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+//     if(!document.myForm2.email2.value.match(emailFormat)) {
+//         alert("Please enter a correct email format with @.");
+//         document.myForm2.email2.focus();
+//         return false;
+//     }
+
+//     //Address validation
+//     if( document.myForm2.adr2.value == "" ){
+//         alert( "Please provide your address!" );
+//         document.myForm2.adr2.focus() ;
+//         return false;
+//     }
+    
+//     //City validation
+//     if( document.myForm2.city2.value == "" ){
+//     alert( "Please provide your city!" );
+//     document.myForm2.city2.focus() ;
+//     return false;
+//     }
+
+//     //State validation
+//     if( document.myForm2.state2.value == "" ){
+//         alert( "Please provide your state!" );
+//         document.myForm2.state2.focus() ;
+//         return false;
+//     }
+
+// }

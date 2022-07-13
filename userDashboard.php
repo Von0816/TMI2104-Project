@@ -23,9 +23,10 @@
             echo '<script type="text/javascript">alert("You need to log in or register ...");
             window.location="index.php";</script>';
           }
+      mysqli_close($link);
 ?>
 
-
+<!DOCTYPE html>
 <html>
     <head>
     <link rel="stylesheet" href="css/uDashboard.css">
@@ -45,22 +46,44 @@
   
             <div class="table-container">
             <h1 style="text-align: center;">Update Profile</h1>
-            <form method="post" action="editProfile_process.php" enctype="multipart/form-data" name="myForm" id="signup-form">
-            <label for="memberUsername">User Name</label>
-              <input type="text" name="username" id="username" value=<?php echo $mUserName?> ><br>
-              <label for="memberName">Name</label>
-              <input type="text" name="name" id="name" value="<?php echo $mName?>" ><br>
-              <label for="memberEmail">Email</label>
-              <input type="text" name="email" id="email" value="<?php echo $mEmail?>" ><br>
-              <label for="memberAddress">Address</label>
-              <input type="text" name="address" id="address" value="<?php echo $mAddr?>" ><br>
-              <label for="memberHP">Mobile Phone</label>
-              <input type="text" name="hp" id="hp" value="<?php echo $mHP?>" ><br>
-              <label for="memberPassword">Password</label>
-              <input type="text" name="password" id="password" value="<?php echo $mPass?>" ><br>
-        
-          <input type="submit" name="update" value="Submit">
-  </form> 
+              <form action="editProfile.php" method="POST" enctype="multipart/form-data" id="signup-form">
+                <div class="form-el">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" value="<?php echo $mUserName?>" required>
+                    <small class="errorMsg"></small>
+                </div>
+                <div class="form-el">
+                    <label for="name">Full name</label>
+                    <input type="text" name="name" id="name" value="<?php echo $mName?>" required>
+                    <small class="errorMsg"></small>
+                </div>
+                <div class="form-el">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" value="<?php echo $mEmail?>" required>
+                    <small class="errorMsg"></small>
+                </div>
+                <div class="form-el">
+                    <label for="address">Address</label>
+                    <input type="text" name="address" id="address" value="<?php echo $mAddr?>" required>
+                    <small class="errorMsg"></small>
+                </div>
+                <div class="form-el">
+                    <label for="hp">Phone number</label>
+                    <input type="tel" name="hp" id="hp" value="<?php echo $mHP?>" required>
+                    <small class="errorMsg"></small>
+                </div>
+                <div class="form-el">
+                    <div>
+                        <label for="password">Password</label>
+                        <p id="pswVis">Show</p>
+                    </div>
+                    <input type="password" name="password" id="password" value="<?php echo $mPass?>" required>
+                    <small class="errorMsg"></small>
+                </div>
+                <div class="form-el">
+                    <button type="submit" name="update" id="submit">Submit</button>
+                </div>
+            </form>
             </div>
         </div>
     </body>

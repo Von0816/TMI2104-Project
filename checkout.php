@@ -13,6 +13,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/checkout.css">
+    <script>
+      function fillShippingForm(){
+        document.getElementById( 'fname2' ).value = document.getElementById( 'fname' ).value;
+        document.getElementById( 'lname2' ).value = document.getElementById( 'lname' ).value;
+        document.getElementById( 'email2' ).value = document.getElementById( 'email' ).value;
+        document.getElementById( 'adr2' ).value = document.getElementById( 'adr' ).value;
+        document.getElementById( 'city2' ).value = document.getElementById( 'city' ).value;
+        document.getElementById( 'state2' ).value = document.getElementById( 'state' ).value;
+      }
+      function clearForm() {
+        document.getElementById( 'fname2' ).value = "";
+        document.getElementById( 'lname2' ).value = "";
+        document.getElementById( 'email2' ).value = "";
+        document.getElementById( 'adr2' ).value = "";
+        document.getElementById( 'city2' ).value = "";
+        document.getElementById( 'state2' ).value = "";
+           
+        }
+    </script>
   </head>
   <body>
     <?php include("navbar.php"); ?>
@@ -90,11 +109,28 @@
                       </div>
                   </div>       
                 </div>
-        <label>
-          <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
-        </label>
-        <input type="submit" value="Continue and Print receipt" class="btn_submit">
-      </form>
+                <script type="text/javascript" src="js/checkout.js"></script><br><br><br>
+                <label>
+                  <input type="checkbox"  name="sameadr" onclick = "if( this.checked ) { fillShippingForm(); } else { clearForm(); }" value = "1"> Shipping address same as billing
+                </label>
+                          
+                            <h3>Shipping Address</h3>
+                            <label for="firstname"><i class="fa fa-user"></i> First Name</label>
+                            <input type="text" id="fname2" name="firstname2" placeholder="Emma" />
+                            <label for="lastname"><i class="fa fa-user"></i> Last Name</label>
+                            <input type="text" id="lname2" name="lastname2" placeholder="Rasyid"/>
+                            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                            <input type="text" id="email2" name="email2" placeholder="emma@example.com"/>
+                            <label for="adr"><i class="fas fa-address-card"></i> Address</label>
+                            <input type="text" id="adr2" name="address2" placeholder="No. 123, Lot 8745, Kampung Baru" autocapitalize="off"/>               
+                            <label for="city"><i class="fas fa-building"></i> City</label>
+                            <input type="text" id="city2" name="city2" placeholder="Kuching"/>                    
+                            <label for="state">State</label>
+                            <input type="text" id="state2" name="state2" placeholder="Sarawak"/>   
+                          </div>
+
+                <input type="submit" value="Continue and Print receipt" class="btn_submit">
+              </form>
     </div>
   </div>
 </div>
